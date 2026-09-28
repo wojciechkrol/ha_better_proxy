@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Doar servicii de încredere: paginile lor folosesc originea Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Serviciu și aspect",
+            "data": {
+              "name": "Nume",
+              "url": "URL-ul serviciului",
+              "panel_path": "Adresă",
+              "icon": "Pictogramă",
+              "show_header": "Afișează antetul panoului"
+            },
+            "data_description": {
+              "url": "Accesibil din HA, de ex. http://esphome:6052.",
+              "show_header": "Titlu, meniu și buton de reîncărcare.",
+              "panel_path": "/esphome. Lăsați gol pentru o adresă automată."
+            }
+          },
+          "access": {
+            "name": "Acces",
+            "data": {
+              "access": "Acces",
+              "users": "Utilizatori selectați"
+            },
+            "data_description": {
+              "users": "Administratorii trebuie și ei selectați."
+            }
+          },
+          "authentication": {
+            "name": "Autentificarea serviciului",
+            "data": {
+              "auth_type": "Autentificare",
+              "username": "Nume de utilizator",
+              "password": "Parolă",
+              "bearer_token": "Token Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic fără utilizator folosește autentificarea aplicației. Digest necesită date de autentificare.",
+              "password": "Salvată în configurația HA fără criptare separată.",
+              "bearer_token": "Doar tokenul serviciului; salvat fără criptare separată."
+            }
+          },
+          "advanced": {
+            "name": "Avansat",
+            "data": {
+              "verify_ssl": "Verifică certificatul TLS",
+              "rewrite": "Rescrie URL-urile aplicației"
+            },
+            "data_description": {
+              "rewrite": "Dezactivează dacă aplicația acceptă deja calea proxy-ului."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Folosește HTTP(S) fără date de autentificare, interogare sau fragment.",
+      "name_required": "Introdu un nume.",
+      "select_users": "Selectează cel puțin un utilizator activ.",
+      "username_required": "Introdu numele de utilizator al serviciului.",
+      "invalid_username": "Numele de utilizator nu poate conține două puncte.",
+      "token_required": "Introdu tokenul serviciului.",
+      "invalid_auth_type": "Selectează un tip de autentificare acceptat.",
+      "invalid_credentials": "Datele de autentificare nu pot conține rânduri noi.",
+      "invalid_panel_path": "Începeți cu /. Folosiți litere latine mici fără diacritice, cifre, - sau _. Căile Home Assistant sunt rezervate.",
+      "panel_path_in_use": "Această cale este deja folosită."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Doar servicii de încredere: paginile lor folosesc originea Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Serviciu și aspect",
+            "data": {
+              "name": "Nume",
+              "url": "URL-ul serviciului",
+              "panel_path": "Adresă",
+              "icon": "Pictogramă",
+              "show_header": "Afișează antetul panoului"
+            },
+            "data_description": {
+              "url": "Accesibil din HA, de ex. http://esphome:6052.",
+              "show_header": "Titlu, meniu și buton de reîncărcare.",
+              "panel_path": "/esphome. Lăsați gol pentru o adresă automată."
+            }
+          },
+          "access": {
+            "name": "Acces",
+            "data": {
+              "access": "Acces",
+              "users": "Utilizatori selectați"
+            },
+            "data_description": {
+              "users": "Administratorii trebuie și ei selectați."
+            }
+          },
+          "authentication": {
+            "name": "Autentificarea serviciului",
+            "data": {
+              "auth_type": "Autentificare",
+              "username": "Nume de utilizator",
+              "password": "Parolă",
+              "bearer_token": "Token Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic fără utilizator folosește autentificarea aplicației. Digest necesită date de autentificare.",
+              "password": "Salvată în configurația HA fără criptare separată.",
+              "bearer_token": "Doar tokenul serviciului; salvat fără criptare separată."
+            }
+          },
+          "advanced": {
+            "name": "Avansat",
+            "data": {
+              "verify_ssl": "Verifică certificatul TLS",
+              "rewrite": "Rescrie URL-urile aplicației"
+            },
+            "data_description": {
+              "rewrite": "Dezactivează dacă aplicația acceptă deja calea proxy-ului."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Folosește HTTP(S) fără date de autentificare, interogare sau fragment.",
+      "name_required": "Introdu un nume.",
+      "select_users": "Selectează cel puțin un utilizator activ.",
+      "username_required": "Introdu numele de utilizator al serviciului.",
+      "invalid_username": "Numele de utilizator nu poate conține două puncte.",
+      "token_required": "Introdu tokenul serviciului.",
+      "invalid_auth_type": "Selectează un tip de autentificare acceptat.",
+      "invalid_credentials": "Datele de autentificare nu pot conține rânduri noi.",
+      "invalid_panel_path": "Începeți cu /. Folosiți litere latine mici fără diacritice, cifre, - sau _. Căile Home Assistant sunt rezervate.",
+      "panel_path_in_use": "Această cale este deja folosită."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Doar administratori",
+        "authenticated": "Toți utilizatorii autentificați",
+        "users": "Utilizatori selectați"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Autentificarea aplicației",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Token Bearer"
+      }
+    }
+  }
+}

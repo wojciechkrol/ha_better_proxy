@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "신뢰할 수 있는 서비스만 추가하세요. 해당 페이지는 Home Assistant와 같은 출처를 사용합니다.",
+        "sections": {
+          "service": {
+            "name": "서비스 및 표시",
+            "data": {
+              "name": "이름",
+              "url": "서비스 URL",
+              "panel_path": "주소",
+              "icon": "아이콘",
+              "show_header": "패널 헤더 표시"
+            },
+            "data_description": {
+              "url": "HA에서 접근할 수 있어야 합니다. 예: http://esphome:6052.",
+              "show_header": "제목, 메뉴 및 새로고침 버튼.",
+              "panel_path": "/esphome. 비워 두면 주소가 자동으로 지정됩니다."
+            }
+          },
+          "access": {
+            "name": "접근 권한",
+            "data": {
+              "access": "접근 권한",
+              "users": "선택한 사용자"
+            },
+            "data_description": {
+              "users": "관리자도 선택해야 합니다."
+            }
+          },
+          "authentication": {
+            "name": "서비스 인증",
+            "data": {
+              "auth_type": "인증 방식",
+              "username": "사용자 이름",
+              "password": "비밀번호",
+              "bearer_token": "Bearer 토큰"
+            },
+            "data_description": {
+              "auth_type": "사용자 이름 없는 Basic은 앱 로그인을 사용합니다. Digest에는 인증 정보가 필요합니다.",
+              "password": "HA 설정에 별도 암호화 없이 저장됩니다.",
+              "bearer_token": "서비스 토큰만 사용하세요. 별도 암호화 없이 저장됩니다."
+            }
+          },
+          "advanced": {
+            "name": "고급 설정",
+            "data": {
+              "verify_ssl": "TLS 인증서 확인",
+              "rewrite": "앱 URL 재작성"
+            },
+            "data_description": {
+              "rewrite": "앱이 이미 프록시 경로를 지원하면 끄세요."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "인증 정보, 쿼리 또는 프래그먼트 없는 HTTP(S)를 사용하세요.",
+      "name_required": "이름을 입력하세요.",
+      "select_users": "활성 사용자를 한 명 이상 선택하세요.",
+      "username_required": "서비스 사용자 이름을 입력하세요.",
+      "invalid_username": "사용자 이름에 콜론을 포함할 수 없습니다.",
+      "token_required": "서비스 토큰을 입력하세요.",
+      "invalid_auth_type": "지원되는 인증 방식을 선택하세요.",
+      "invalid_credentials": "인증 정보에 줄바꿈을 포함할 수 없습니다.",
+      "invalid_panel_path": "/로 시작하세요. 영문 소문자, 숫자, - 또는 _를 사용하세요. Home Assistant 경로는 예약되어 있습니다.",
+      "panel_path_in_use": "이 경로는 이미 사용 중입니다."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "신뢰할 수 있는 서비스만 추가하세요. 해당 페이지는 Home Assistant와 같은 출처를 사용합니다.",
+        "sections": {
+          "service": {
+            "name": "서비스 및 표시",
+            "data": {
+              "name": "이름",
+              "url": "서비스 URL",
+              "panel_path": "주소",
+              "icon": "아이콘",
+              "show_header": "패널 헤더 표시"
+            },
+            "data_description": {
+              "url": "HA에서 접근할 수 있어야 합니다. 예: http://esphome:6052.",
+              "show_header": "제목, 메뉴 및 새로고침 버튼.",
+              "panel_path": "/esphome. 비워 두면 주소가 자동으로 지정됩니다."
+            }
+          },
+          "access": {
+            "name": "접근 권한",
+            "data": {
+              "access": "접근 권한",
+              "users": "선택한 사용자"
+            },
+            "data_description": {
+              "users": "관리자도 선택해야 합니다."
+            }
+          },
+          "authentication": {
+            "name": "서비스 인증",
+            "data": {
+              "auth_type": "인증 방식",
+              "username": "사용자 이름",
+              "password": "비밀번호",
+              "bearer_token": "Bearer 토큰"
+            },
+            "data_description": {
+              "auth_type": "사용자 이름 없는 Basic은 앱 로그인을 사용합니다. Digest에는 인증 정보가 필요합니다.",
+              "password": "HA 설정에 별도 암호화 없이 저장됩니다.",
+              "bearer_token": "서비스 토큰만 사용하세요. 별도 암호화 없이 저장됩니다."
+            }
+          },
+          "advanced": {
+            "name": "고급 설정",
+            "data": {
+              "verify_ssl": "TLS 인증서 확인",
+              "rewrite": "앱 URL 재작성"
+            },
+            "data_description": {
+              "rewrite": "앱이 이미 프록시 경로를 지원하면 끄세요."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "인증 정보, 쿼리 또는 프래그먼트 없는 HTTP(S)를 사용하세요.",
+      "name_required": "이름을 입력하세요.",
+      "select_users": "활성 사용자를 한 명 이상 선택하세요.",
+      "username_required": "서비스 사용자 이름을 입력하세요.",
+      "invalid_username": "사용자 이름에 콜론을 포함할 수 없습니다.",
+      "token_required": "서비스 토큰을 입력하세요.",
+      "invalid_auth_type": "지원되는 인증 방식을 선택하세요.",
+      "invalid_credentials": "인증 정보에 줄바꿈을 포함할 수 없습니다.",
+      "invalid_panel_path": "/로 시작하세요. 영문 소문자, 숫자, - 또는 _를 사용하세요. Home Assistant 경로는 예약되어 있습니다.",
+      "panel_path_in_use": "이 경로는 이미 사용 중입니다."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "관리자만",
+        "authenticated": "로그인한 모든 사용자",
+        "users": "선택한 사용자"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "앱 로그인",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Bearer 토큰"
+      }
+    }
+  }
+}

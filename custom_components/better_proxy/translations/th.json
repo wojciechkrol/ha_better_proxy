@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "เฉพาะบริการที่เชื่อถือได้: หน้าเว็บใช้ต้นทางเดียวกับ Home Assistant",
+        "sections": {
+          "service": {
+            "name": "บริการและรูปลักษณ์",
+            "data": {
+              "name": "ชื่อ",
+              "url": "URL ของบริการ",
+              "panel_path": "ที่อยู่",
+              "icon": "ไอคอน",
+              "show_header": "แสดงส่วนหัวแผง"
+            },
+            "data_description": {
+              "url": "HA ต้องเข้าถึงได้ เช่น http://esphome:6052",
+              "show_header": "ชื่อ เมนู และปุ่มโหลดใหม่",
+              "panel_path": "/esphome. เว้นว่างเพื่อใช้ที่อยู่อัตโนมัติ"
+            }
+          },
+          "access": {
+            "name": "สิทธิ์เข้าถึง",
+            "data": {
+              "access": "สิทธิ์เข้าถึง",
+              "users": "ผู้ใช้ที่เลือก"
+            },
+            "data_description": {
+              "users": "ต้องเลือกผู้ดูแลระบบด้วย"
+            }
+          },
+          "authentication": {
+            "name": "การยืนยันตัวตนของบริการ",
+            "data": {
+              "auth_type": "การยืนยันตัวตน",
+              "username": "ชื่อผู้ใช้",
+              "password": "รหัสผ่าน",
+              "bearer_token": "โทเค็น Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic ที่ไม่มีชื่อผู้ใช้จะใช้หน้าเข้าสู่ระบบของแอป ส่วน Digest ต้องระบุข้อมูลเข้าสู่ระบบ",
+              "password": "บันทึกในค่ากำหนด HA โดยไม่มีการเข้ารหัสแยก",
+              "bearer_token": "ใช้โทเค็นของบริการเท่านั้น บันทึกโดยไม่มีการเข้ารหัสแยก"
+            }
+          },
+          "advanced": {
+            "name": "ขั้นสูง",
+            "data": {
+              "verify_ssl": "ตรวจสอบใบรับรอง TLS",
+              "rewrite": "เขียน URL ของแอปใหม่"
+            },
+            "data_description": {
+              "rewrite": "ปิดหากแอปรองรับพาธพร็อกซีอยู่แล้ว"
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "ใช้ HTTP(S) โดยไม่มีข้อมูลเข้าสู่ระบบ คิวรี หรือส่วนย่อย",
+      "name_required": "ระบุชื่อ",
+      "select_users": "เลือกผู้ใช้ที่ใช้งานอยู่อย่างน้อยหนึ่งคน",
+      "username_required": "ระบุชื่อผู้ใช้ของบริการ",
+      "invalid_username": "ชื่อผู้ใช้ต้องไม่มีเครื่องหมายทวิภาค",
+      "token_required": "ระบุโทเค็นของบริการ",
+      "invalid_auth_type": "เลือกประเภทการยืนยันตัวตนที่รองรับ",
+      "invalid_credentials": "ข้อมูลเข้าสู่ระบบต้องไม่มีอักขระขึ้นบรรทัดใหม่",
+      "invalid_panel_path": "เริ่มต้นด้วย / ใช้ตัวอักษรละตินพิมพ์เล็ก ตัวเลข - หรือ _ พาธของ Home Assistant ถูกสงวนไว้",
+      "panel_path_in_use": "พาธนี้ถูกใช้งานแล้ว"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "เฉพาะบริการที่เชื่อถือได้: หน้าเว็บใช้ต้นทางเดียวกับ Home Assistant",
+        "sections": {
+          "service": {
+            "name": "บริการและรูปลักษณ์",
+            "data": {
+              "name": "ชื่อ",
+              "url": "URL ของบริการ",
+              "panel_path": "ที่อยู่",
+              "icon": "ไอคอน",
+              "show_header": "แสดงส่วนหัวแผง"
+            },
+            "data_description": {
+              "url": "HA ต้องเข้าถึงได้ เช่น http://esphome:6052",
+              "show_header": "ชื่อ เมนู และปุ่มโหลดใหม่",
+              "panel_path": "/esphome. เว้นว่างเพื่อใช้ที่อยู่อัตโนมัติ"
+            }
+          },
+          "access": {
+            "name": "สิทธิ์เข้าถึง",
+            "data": {
+              "access": "สิทธิ์เข้าถึง",
+              "users": "ผู้ใช้ที่เลือก"
+            },
+            "data_description": {
+              "users": "ต้องเลือกผู้ดูแลระบบด้วย"
+            }
+          },
+          "authentication": {
+            "name": "การยืนยันตัวตนของบริการ",
+            "data": {
+              "auth_type": "การยืนยันตัวตน",
+              "username": "ชื่อผู้ใช้",
+              "password": "รหัสผ่าน",
+              "bearer_token": "โทเค็น Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic ที่ไม่มีชื่อผู้ใช้จะใช้หน้าเข้าสู่ระบบของแอป ส่วน Digest ต้องระบุข้อมูลเข้าสู่ระบบ",
+              "password": "บันทึกในค่ากำหนด HA โดยไม่มีการเข้ารหัสแยก",
+              "bearer_token": "ใช้โทเค็นของบริการเท่านั้น บันทึกโดยไม่มีการเข้ารหัสแยก"
+            }
+          },
+          "advanced": {
+            "name": "ขั้นสูง",
+            "data": {
+              "verify_ssl": "ตรวจสอบใบรับรอง TLS",
+              "rewrite": "เขียน URL ของแอปใหม่"
+            },
+            "data_description": {
+              "rewrite": "ปิดหากแอปรองรับพาธพร็อกซีอยู่แล้ว"
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "ใช้ HTTP(S) โดยไม่มีข้อมูลเข้าสู่ระบบ คิวรี หรือส่วนย่อย",
+      "name_required": "ระบุชื่อ",
+      "select_users": "เลือกผู้ใช้ที่ใช้งานอยู่อย่างน้อยหนึ่งคน",
+      "username_required": "ระบุชื่อผู้ใช้ของบริการ",
+      "invalid_username": "ชื่อผู้ใช้ต้องไม่มีเครื่องหมายทวิภาค",
+      "token_required": "ระบุโทเค็นของบริการ",
+      "invalid_auth_type": "เลือกประเภทการยืนยันตัวตนที่รองรับ",
+      "invalid_credentials": "ข้อมูลเข้าสู่ระบบต้องไม่มีอักขระขึ้นบรรทัดใหม่",
+      "invalid_panel_path": "เริ่มต้นด้วย / ใช้ตัวอักษรละตินพิมพ์เล็ก ตัวเลข - หรือ _ พาธของ Home Assistant ถูกสงวนไว้",
+      "panel_path_in_use": "พาธนี้ถูกใช้งานแล้ว"
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "ผู้ดูแลระบบเท่านั้น",
+        "authenticated": "ผู้ใช้ที่เข้าสู่ระบบทุกคน",
+        "users": "ผู้ใช้ที่เลือก"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "เข้าสู่ระบบในแอป",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "โทเค็น Bearer"
+      }
+    }
+  }
+}

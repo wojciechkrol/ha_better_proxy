@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Vain luotetut palvelut: niiden sivut käyttävät Home Assistantin alkuperää.",
+        "sections": {
+          "service": {
+            "name": "Palvelu ja ulkoasu",
+            "data": {
+              "name": "Nimi",
+              "url": "Palvelun URL",
+              "panel_path": "Osoite",
+              "icon": "Kuvake",
+              "show_header": "Näytä paneelin otsake"
+            },
+            "data_description": {
+              "url": "HA:n tavoitettavissa, esim. http://esphome:6052.",
+              "show_header": "Otsikko, valikko ja uudelleenlatauspainike.",
+              "panel_path": "/esphome. Jätä tyhjäksi automaattista osoitetta varten."
+            }
+          },
+          "access": {
+            "name": "Käyttöoikeudet",
+            "data": {
+              "access": "Käyttöoikeudet",
+              "users": "Valitut käyttäjät"
+            },
+            "data_description": {
+              "users": "Myös ylläpitäjät on valittava."
+            }
+          },
+          "authentication": {
+            "name": "Palvelun tunnistautuminen",
+            "data": {
+              "auth_type": "Tunnistautuminen",
+              "username": "Käyttäjätunnus",
+              "password": "Salasana",
+              "bearer_token": "Bearer-tunniste"
+            },
+            "data_description": {
+              "auth_type": "Basic ilman käyttäjätunnusta käyttää sovelluksen kirjautumista. Digest vaatii tunnukset.",
+              "password": "Tallennetaan HA:n asetuksiin ilman erillistä salausta.",
+              "bearer_token": "Vain palvelun tunniste; tallennetaan ilman erillistä salausta."
+            }
+          },
+          "advanced": {
+            "name": "Lisäasetukset",
+            "data": {
+              "verify_ssl": "Tarkista TLS-varmenne",
+              "rewrite": "Kirjoita sovelluksen URL-osoitteet uudelleen"
+            },
+            "data_description": {
+              "rewrite": "Poista käytöstä, jos sovellus tukee jo välityspalvelimen polkua."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Käytä HTTP(S)-osoitetta ilman tunnuksia, kyselyä tai fragmenttia.",
+      "name_required": "Anna nimi.",
+      "select_users": "Valitse vähintään yksi aktiivinen käyttäjä.",
+      "username_required": "Anna palvelun käyttäjätunnus.",
+      "invalid_username": "Käyttäjätunnus ei saa sisältää kaksoispistettä.",
+      "token_required": "Anna palvelun tunniste.",
+      "invalid_auth_type": "Valitse tuettu tunnistautumistapa.",
+      "invalid_credentials": "Tunnukset eivät saa sisältää rivinvaihtoja.",
+      "invalid_panel_path": "Aloita merkillä /. Käytä pieniä latinalaisia kirjaimia ilman tarkkeita, numeroita, - tai _. Home Assistantin polut on varattu.",
+      "panel_path_in_use": "Tämä polku on jo käytössä."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Vain luotetut palvelut: niiden sivut käyttävät Home Assistantin alkuperää.",
+        "sections": {
+          "service": {
+            "name": "Palvelu ja ulkoasu",
+            "data": {
+              "name": "Nimi",
+              "url": "Palvelun URL",
+              "panel_path": "Osoite",
+              "icon": "Kuvake",
+              "show_header": "Näytä paneelin otsake"
+            },
+            "data_description": {
+              "url": "HA:n tavoitettavissa, esim. http://esphome:6052.",
+              "show_header": "Otsikko, valikko ja uudelleenlatauspainike.",
+              "panel_path": "/esphome. Jätä tyhjäksi automaattista osoitetta varten."
+            }
+          },
+          "access": {
+            "name": "Käyttöoikeudet",
+            "data": {
+              "access": "Käyttöoikeudet",
+              "users": "Valitut käyttäjät"
+            },
+            "data_description": {
+              "users": "Myös ylläpitäjät on valittava."
+            }
+          },
+          "authentication": {
+            "name": "Palvelun tunnistautuminen",
+            "data": {
+              "auth_type": "Tunnistautuminen",
+              "username": "Käyttäjätunnus",
+              "password": "Salasana",
+              "bearer_token": "Bearer-tunniste"
+            },
+            "data_description": {
+              "auth_type": "Basic ilman käyttäjätunnusta käyttää sovelluksen kirjautumista. Digest vaatii tunnukset.",
+              "password": "Tallennetaan HA:n asetuksiin ilman erillistä salausta.",
+              "bearer_token": "Vain palvelun tunniste; tallennetaan ilman erillistä salausta."
+            }
+          },
+          "advanced": {
+            "name": "Lisäasetukset",
+            "data": {
+              "verify_ssl": "Tarkista TLS-varmenne",
+              "rewrite": "Kirjoita sovelluksen URL-osoitteet uudelleen"
+            },
+            "data_description": {
+              "rewrite": "Poista käytöstä, jos sovellus tukee jo välityspalvelimen polkua."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Käytä HTTP(S)-osoitetta ilman tunnuksia, kyselyä tai fragmenttia.",
+      "name_required": "Anna nimi.",
+      "select_users": "Valitse vähintään yksi aktiivinen käyttäjä.",
+      "username_required": "Anna palvelun käyttäjätunnus.",
+      "invalid_username": "Käyttäjätunnus ei saa sisältää kaksoispistettä.",
+      "token_required": "Anna palvelun tunniste.",
+      "invalid_auth_type": "Valitse tuettu tunnistautumistapa.",
+      "invalid_credentials": "Tunnukset eivät saa sisältää rivinvaihtoja.",
+      "invalid_panel_path": "Aloita merkillä /. Käytä pieniä latinalaisia kirjaimia ilman tarkkeita, numeroita, - tai _. Home Assistantin polut on varattu.",
+      "panel_path_in_use": "Tämä polku on jo käytössä."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Vain ylläpitäjät",
+        "authenticated": "Kaikki kirjautuneet käyttäjät",
+        "users": "Valitut käyttäjät"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Sovelluksen kirjautuminen",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Bearer-tunniste"
+      }
+    }
+  }
+}

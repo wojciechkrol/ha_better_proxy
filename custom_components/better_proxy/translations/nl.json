@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Alleen vertrouwde diensten: hun pagina’s delen de oorsprong van Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Dienst en weergave",
+            "data": {
+              "name": "Naam",
+              "url": "Dienst-URL",
+              "panel_path": "Adres",
+              "icon": "Pictogram",
+              "show_header": "Paneelkop tonen"
+            },
+            "data_description": {
+              "url": "Bereikbaar vanuit HA, bijv. http://esphome:6052.",
+              "show_header": "Titel, menu en herlaadknop.",
+              "panel_path": "/esphome. Laat leeg voor een automatisch adres."
+            }
+          },
+          "access": {
+            "name": "Toegang",
+            "data": {
+              "access": "Toegang",
+              "users": "Geselecteerde gebruikers"
+            },
+            "data_description": {
+              "users": "Selecteer ook beheerders die toegang nodig hebben."
+            }
+          },
+          "authentication": {
+            "name": "Aanmelding bij dienst",
+            "data": {
+              "auth_type": "Authenticatie",
+              "username": "Gebruikersnaam",
+              "password": "Wachtwoord",
+              "bearer_token": "Bearer-token"
+            },
+            "data_description": {
+              "auth_type": "Basic zonder gebruikersnaam gebruikt de applicatieaanmelding. Digest vereist inloggegevens.",
+              "password": "Opgeslagen in de HA-configuratie zonder extra versleuteling.",
+              "bearer_token": "Alleen een diensttoken; opgeslagen zonder extra versleuteling."
+            }
+          },
+          "advanced": {
+            "name": "Geavanceerd",
+            "data": {
+              "verify_ssl": "TLS-certificaat controleren",
+              "rewrite": "Applicatie-URL’s herschrijven"
+            },
+            "data_description": {
+              "rewrite": "Uitschakelen als de applicatie het proxypad al ondersteunt."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Gebruik HTTP(S) zonder inloggegevens, query of fragment.",
+      "name_required": "Voer een naam in.",
+      "select_users": "Selecteer minstens één actieve gebruiker.",
+      "username_required": "Voer de gebruikersnaam van de dienst in.",
+      "invalid_username": "De gebruikersnaam mag geen dubbele punt bevatten.",
+      "token_required": "Voer het diensttoken in.",
+      "invalid_auth_type": "Selecteer een ondersteund authenticatietype.",
+      "invalid_credentials": "Inloggegevens mogen geen regeleinden bevatten.",
+      "invalid_panel_path": "Begin met /. Gebruik kleine Latijnse letters zonder accenten, cijfers, - of _. Home Assistant-paden zijn gereserveerd.",
+      "panel_path_in_use": "Dit pad is al in gebruik."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Alleen vertrouwde diensten: hun pagina’s delen de oorsprong van Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Dienst en weergave",
+            "data": {
+              "name": "Naam",
+              "url": "Dienst-URL",
+              "panel_path": "Adres",
+              "icon": "Pictogram",
+              "show_header": "Paneelkop tonen"
+            },
+            "data_description": {
+              "url": "Bereikbaar vanuit HA, bijv. http://esphome:6052.",
+              "show_header": "Titel, menu en herlaadknop.",
+              "panel_path": "/esphome. Laat leeg voor een automatisch adres."
+            }
+          },
+          "access": {
+            "name": "Toegang",
+            "data": {
+              "access": "Toegang",
+              "users": "Geselecteerde gebruikers"
+            },
+            "data_description": {
+              "users": "Selecteer ook beheerders die toegang nodig hebben."
+            }
+          },
+          "authentication": {
+            "name": "Aanmelding bij dienst",
+            "data": {
+              "auth_type": "Authenticatie",
+              "username": "Gebruikersnaam",
+              "password": "Wachtwoord",
+              "bearer_token": "Bearer-token"
+            },
+            "data_description": {
+              "auth_type": "Basic zonder gebruikersnaam gebruikt de applicatieaanmelding. Digest vereist inloggegevens.",
+              "password": "Opgeslagen in de HA-configuratie zonder extra versleuteling.",
+              "bearer_token": "Alleen een diensttoken; opgeslagen zonder extra versleuteling."
+            }
+          },
+          "advanced": {
+            "name": "Geavanceerd",
+            "data": {
+              "verify_ssl": "TLS-certificaat controleren",
+              "rewrite": "Applicatie-URL’s herschrijven"
+            },
+            "data_description": {
+              "rewrite": "Uitschakelen als de applicatie het proxypad al ondersteunt."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Gebruik HTTP(S) zonder inloggegevens, query of fragment.",
+      "name_required": "Voer een naam in.",
+      "select_users": "Selecteer minstens één actieve gebruiker.",
+      "username_required": "Voer de gebruikersnaam van de dienst in.",
+      "invalid_username": "De gebruikersnaam mag geen dubbele punt bevatten.",
+      "token_required": "Voer het diensttoken in.",
+      "invalid_auth_type": "Selecteer een ondersteund authenticatietype.",
+      "invalid_credentials": "Inloggegevens mogen geen regeleinden bevatten.",
+      "invalid_panel_path": "Begin met /. Gebruik kleine Latijnse letters zonder accenten, cijfers, - of _. Home Assistant-paden zijn gereserveerd.",
+      "panel_path_in_use": "Dit pad is al in gebruik."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Alleen beheerders",
+        "authenticated": "Alle aangemelde gebruikers",
+        "users": "Geselecteerde gebruikers"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Applicatieaanmelding",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Bearer-token"
+      }
+    }
+  }
+}

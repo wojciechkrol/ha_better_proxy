@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "שירותים מהימנים בלבד: הדפים שלהם חולקים את המקור של Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "שירות ומראה",
+            "data": {
+              "name": "שם",
+              "url": "כתובת השירות",
+              "panel_path": "כתובת",
+              "icon": "סמל",
+              "show_header": "הצגת כותרת הלוח"
+            },
+            "data_description": {
+              "url": "נגיש מתוך HA, למשל http://esphome:6052.",
+              "show_header": "כותרת, תפריט וכפתור טעינה מחדש.",
+              "panel_path": "/esphome. יש להשאיר ריק לכתובת אוטומטית."
+            }
+          },
+          "access": {
+            "name": "גישה",
+            "data": {
+              "access": "גישה",
+              "users": "משתמשים נבחרים"
+            },
+            "data_description": {
+              "users": "יש לבחור גם מנהלי מערכת."
+            }
+          },
+          "authentication": {
+            "name": "אימות השירות",
+            "data": {
+              "auth_type": "אימות",
+              "username": "שם משתמש",
+              "password": "סיסמה",
+              "bearer_token": "אסימון Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic ללא שם משתמש משתמש בכניסת היישום. Digest דורש פרטי כניסה.",
+              "password": "נשמרת בתצורת HA ללא הצפנה נפרדת.",
+              "bearer_token": "אסימון השירות בלבד; נשמר ללא הצפנה נפרדת."
+            }
+          },
+          "advanced": {
+            "name": "מתקדם",
+            "data": {
+              "verify_ssl": "אימות תעודת TLS",
+              "rewrite": "שכתוב כתובות היישום"
+            },
+            "data_description": {
+              "rewrite": "יש להשבית אם היישום כבר תומך בנתיב הפרוקסי."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "יש להשתמש ב־HTTP(S) ללא פרטי כניסה, שאילתה או מקטע.",
+      "name_required": "יש להזין שם.",
+      "select_users": "יש לבחור לפחות משתמש פעיל אחד.",
+      "username_required": "יש להזין את שם המשתמש בשירות.",
+      "invalid_username": "שם המשתמש לא יכול להכיל נקודתיים.",
+      "token_required": "יש להזין את אסימון השירות.",
+      "invalid_auth_type": "יש לבחור סוג אימות נתמך.",
+      "invalid_credentials": "פרטי הכניסה לא יכולים להכיל מעברי שורה.",
+      "invalid_panel_path": "יש להתחיל ב-/. יש להשתמש באותיות לטיניות קטנות, ספרות, - או _. הנתיבים של Home Assistant שמורים.",
+      "panel_path_in_use": "הנתיב הזה כבר בשימוש."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "שירותים מהימנים בלבד: הדפים שלהם חולקים את המקור של Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "שירות ומראה",
+            "data": {
+              "name": "שם",
+              "url": "כתובת השירות",
+              "panel_path": "כתובת",
+              "icon": "סמל",
+              "show_header": "הצגת כותרת הלוח"
+            },
+            "data_description": {
+              "url": "נגיש מתוך HA, למשל http://esphome:6052.",
+              "show_header": "כותרת, תפריט וכפתור טעינה מחדש.",
+              "panel_path": "/esphome. יש להשאיר ריק לכתובת אוטומטית."
+            }
+          },
+          "access": {
+            "name": "גישה",
+            "data": {
+              "access": "גישה",
+              "users": "משתמשים נבחרים"
+            },
+            "data_description": {
+              "users": "יש לבחור גם מנהלי מערכת."
+            }
+          },
+          "authentication": {
+            "name": "אימות השירות",
+            "data": {
+              "auth_type": "אימות",
+              "username": "שם משתמש",
+              "password": "סיסמה",
+              "bearer_token": "אסימון Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic ללא שם משתמש משתמש בכניסת היישום. Digest דורש פרטי כניסה.",
+              "password": "נשמרת בתצורת HA ללא הצפנה נפרדת.",
+              "bearer_token": "אסימון השירות בלבד; נשמר ללא הצפנה נפרדת."
+            }
+          },
+          "advanced": {
+            "name": "מתקדם",
+            "data": {
+              "verify_ssl": "אימות תעודת TLS",
+              "rewrite": "שכתוב כתובות היישום"
+            },
+            "data_description": {
+              "rewrite": "יש להשבית אם היישום כבר תומך בנתיב הפרוקסי."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "יש להשתמש ב־HTTP(S) ללא פרטי כניסה, שאילתה או מקטע.",
+      "name_required": "יש להזין שם.",
+      "select_users": "יש לבחור לפחות משתמש פעיל אחד.",
+      "username_required": "יש להזין את שם המשתמש בשירות.",
+      "invalid_username": "שם המשתמש לא יכול להכיל נקודתיים.",
+      "token_required": "יש להזין את אסימון השירות.",
+      "invalid_auth_type": "יש לבחור סוג אימות נתמך.",
+      "invalid_credentials": "פרטי הכניסה לא יכולים להכיל מעברי שורה.",
+      "invalid_panel_path": "יש להתחיל ב-/. יש להשתמש באותיות לטיניות קטנות, ספרות, - או _. הנתיבים של Home Assistant שמורים.",
+      "panel_path_in_use": "הנתיב הזה כבר בשימוש."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "מנהלי מערכת בלבד",
+        "authenticated": "כל המשתמשים המחוברים",
+        "users": "משתמשים נבחרים"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "כניסה ליישום",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "אסימון Bearer"
+      }
+    }
+  }
+}

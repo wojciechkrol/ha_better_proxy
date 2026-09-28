@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Endast betrodda tjänster: deras sidor delar ursprung med Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Tjänst och utseende",
+            "data": {
+              "name": "Namn",
+              "url": "Tjänstens URL",
+              "panel_path": "Adress",
+              "icon": "Ikon",
+              "show_header": "Visa panelhuvud"
+            },
+            "data_description": {
+              "url": "Nåbar från HA, t.ex. http://esphome:6052.",
+              "show_header": "Titel, meny och omladdningsknapp.",
+              "panel_path": "/esphome. Lämna tomt för en automatisk adress."
+            }
+          },
+          "access": {
+            "name": "Åtkomst",
+            "data": {
+              "access": "Åtkomst",
+              "users": "Valda användare"
+            },
+            "data_description": {
+              "users": "Även administratörer måste väljas."
+            }
+          },
+          "authentication": {
+            "name": "Tjänsteautentisering",
+            "data": {
+              "auth_type": "Autentisering",
+              "username": "Användarnamn",
+              "password": "Lösenord",
+              "bearer_token": "Bearer-token"
+            },
+            "data_description": {
+              "auth_type": "Basic utan användarnamn använder appens inloggning. Digest kräver inloggningsuppgifter.",
+              "password": "Sparas i HA-konfigurationen utan separat kryptering.",
+              "bearer_token": "Endast tjänstens token; sparas utan separat kryptering."
+            }
+          },
+          "advanced": {
+            "name": "Avancerat",
+            "data": {
+              "verify_ssl": "Verifiera TLS-certifikat",
+              "rewrite": "Skriv om appens URL:er"
+            },
+            "data_description": {
+              "rewrite": "Stäng av om appen redan stöder proxysökvägen."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Använd HTTP(S) utan inloggningsuppgifter, fråga eller fragment.",
+      "name_required": "Ange ett namn.",
+      "select_users": "Välj minst en aktiv användare.",
+      "username_required": "Ange tjänstens användarnamn.",
+      "invalid_username": "Användarnamnet får inte innehålla kolon.",
+      "token_required": "Ange tjänstens token.",
+      "invalid_auth_type": "Välj en autentiseringstyp som stöds.",
+      "invalid_credentials": "Inloggningsuppgifter får inte innehålla radbrytningar.",
+      "invalid_panel_path": "Börja med /. Använd små latinska bokstäver utan diakritiska tecken, siffror, - eller _. Home Assistant-sökvägar är reserverade.",
+      "panel_path_in_use": "Den här sökvägen används redan."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Endast betrodda tjänster: deras sidor delar ursprung med Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Tjänst och utseende",
+            "data": {
+              "name": "Namn",
+              "url": "Tjänstens URL",
+              "panel_path": "Adress",
+              "icon": "Ikon",
+              "show_header": "Visa panelhuvud"
+            },
+            "data_description": {
+              "url": "Nåbar från HA, t.ex. http://esphome:6052.",
+              "show_header": "Titel, meny och omladdningsknapp.",
+              "panel_path": "/esphome. Lämna tomt för en automatisk adress."
+            }
+          },
+          "access": {
+            "name": "Åtkomst",
+            "data": {
+              "access": "Åtkomst",
+              "users": "Valda användare"
+            },
+            "data_description": {
+              "users": "Även administratörer måste väljas."
+            }
+          },
+          "authentication": {
+            "name": "Tjänsteautentisering",
+            "data": {
+              "auth_type": "Autentisering",
+              "username": "Användarnamn",
+              "password": "Lösenord",
+              "bearer_token": "Bearer-token"
+            },
+            "data_description": {
+              "auth_type": "Basic utan användarnamn använder appens inloggning. Digest kräver inloggningsuppgifter.",
+              "password": "Sparas i HA-konfigurationen utan separat kryptering.",
+              "bearer_token": "Endast tjänstens token; sparas utan separat kryptering."
+            }
+          },
+          "advanced": {
+            "name": "Avancerat",
+            "data": {
+              "verify_ssl": "Verifiera TLS-certifikat",
+              "rewrite": "Skriv om appens URL:er"
+            },
+            "data_description": {
+              "rewrite": "Stäng av om appen redan stöder proxysökvägen."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Använd HTTP(S) utan inloggningsuppgifter, fråga eller fragment.",
+      "name_required": "Ange ett namn.",
+      "select_users": "Välj minst en aktiv användare.",
+      "username_required": "Ange tjänstens användarnamn.",
+      "invalid_username": "Användarnamnet får inte innehålla kolon.",
+      "token_required": "Ange tjänstens token.",
+      "invalid_auth_type": "Välj en autentiseringstyp som stöds.",
+      "invalid_credentials": "Inloggningsuppgifter får inte innehålla radbrytningar.",
+      "invalid_panel_path": "Börja med /. Använd små latinska bokstäver utan diakritiska tecken, siffror, - eller _. Home Assistant-sökvägar är reserverade.",
+      "panel_path_in_use": "Den här sökvägen används redan."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Endast administratörer",
+        "authenticated": "Alla inloggade användare",
+        "users": "Valda användare"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Appens inloggning",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Bearer-token"
+      }
+    }
+  }
+}

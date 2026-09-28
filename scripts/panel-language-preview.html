@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Better Proxy language checks</title>
+  <style>
+    body { margin:24px; font:16px system-ui; background:#f3f5f7; color:#17232c; }
+    label, button, select { margin:8px; padding:8px; }
+    #preview { width:min(100%,600px); height:240px; overflow:hidden; --primary-background-color:#111; --primary-text-color:#eee; --header-height:56px; }
+    #preview > better-proxy-panel { height:100%; }
+    output { display:block; margin:16px 0; }
+  </style>
+</head>
+<body>
+  <h1>Better Proxy language checks</h1>
+  <label>Language <select id="language"></select></label>
+  <button id="run">Check all languages</button>
+  <output id="result">Ready</output>
+  <div id="preview"></div>
+  <script type="module">
+    import '../custom_components/better_proxy/frontend/panel.js';
+    import { panelMessages } from '../custom_components/better_proxy/frontend/translations.js';
+    const language = document.getElementById('language');
+    for (const code of [...Object.keys(panelMessages),'es-MX','pt_BR','zh-TW','no','xx']) {
+      const option = document.createElement('option'); option.value=code; option.textContent=code; language.append(option);
+    }
+    const panel = document.createElement('better-proxy-panel');
+    let response = 403;
+    const apply = code => {
+      const base = code.toLowerCase().split(/[-_]/)[0];
+      document.getElementById('preview').dir = ['ar','he','fa','ur'].includes(base) ? 'rtl' : 'ltr';
+      panel.hass = { language:code, callApi:async () => {throw {status_code:response};} };
+    };
+    panel.panel = {config:{title:'Language preview',entry_id:'synthetic',show_header:true}};
+    apply('en'); document.getElementById('preview').append(panel);
+    language.onchange = () => apply(language.value);
+    const tick = () => new Promise(resolve => requestAnimationFrame(resolve));
+    document.getElementById('run').onclick = async () => {
+      let checks=0;
+      const failures=[];
+      const expectedCode = code => ({'es-MX':'es','pt_BR':'pt-br','zh-TW':'zh-hant',no:'nb',xx:'en'})[code] || code;
+      for (const code of [...language.options].map(option=>option.value)) {
+        apply(code);
+        const expected = panelMessages[expectedCode(code)];
+        for (const status of [403,503]) {
+          response=status; await panel.open(true); await tick();
+          const statusText = panel.shadowRoot.querySelector('#status').textContent;
+          const reloadTitle = panel.shadowRoot.querySelector('#reload').title;
+          const correct = statusText===expected[status===403?'denied':'failed'] && reloadTitle===expected.reload;
+          checks++; if (!correct) failures.push(`${code}/${status}`);
+        }
+      }
+      document.getElementById('result').textContent = failures.length ? `FAIL: ${failures.join(', ')}` : `PASS: ${checks} checks across 36 languages and 5 fallback cases`;
+      response=403; language.value='pl'; apply('pl'); await panel.open(true);
+    };
+  </script>
+</body>
+</html>

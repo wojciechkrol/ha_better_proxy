@@ -1,0 +1,67 @@
+name: better-proxy-dev
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    pull_policy: always
+    ports:
+      - "127.0.0.1:18765:8123"
+    volumes:
+      - ha_config:/config
+      - ./dev/configuration.yaml:/config/configuration.yaml:ro
+      - ./custom_components:/config/custom_components:ro
+    environment:
+      TZ: Europe/Warsaw
+    depends_on:
+      - demo
+  demo:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    pull_policy: always
+    entrypoint: ["python3", "/demo/demo_service.py"]
+    volumes:
+      - ./scripts/demo_service.py:/demo/demo_service.py:ro
+    environment:
+      DEMO_HOST: 0.0.0.0
+    # Reachable by Home Assistant at http://demo:18766, without a host port.
+  esphome:
+    image: ghcr.io/esphome/esphome:stable
+    pull_policy: always
+    profiles: ["examples"]
+    volumes:
+      - esphome_config:/config
+    environment:
+      TZ: Europe/Warsaw
+  pihole:
+    image: pihole/pihole:latest
+    pull_policy: always
+    profiles: ["examples"]
+    hostname: pihole
+    volumes:
+      - pihole_config:/etc/pihole
+    environment:
+      TZ: Europe/Warsaw
+      FTLCONF_dns_listeningMode: ALL
+      FTLCONF_webserver_port: "80"
+      FTLCONF_webserver_domain: pihole
+      # Isolated demonstration instance; access is authenticated by Home Assistant.
+      FTLCONF_webserver_api_password: ""
+      FTLCONF_ntp_sync_active: "false"
+  tests:
+    image: ${HA_TEST_IMAGE:-ghcr.io/home-assistant/home-assistant:stable}
+    pull_policy: always
+    profiles: ["test"]
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - >-
+        pip install --no-cache-dir -r requirements-dev.txt &&
+        ruff check --no-cache custom_components tests scripts &&
+        ruff format --check --no-cache custom_components tests scripts &&
+        pytest -q -o cache_dir=/tmp/pytest-cache
+    working_dir: /workspace
+    volumes:
+      - .:/workspace:ro
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"
+volumes:
+  ha_config:
+  esphome_config:
+  pihole_config:

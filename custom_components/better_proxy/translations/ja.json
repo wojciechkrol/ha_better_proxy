@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "信頼できるサービスのみ追加してください。ページは Home Assistant と同じオリジンで動作します。",
+        "sections": {
+          "service": {
+            "name": "サービスと外観",
+            "data": {
+              "name": "名前",
+              "url": "サービス URL",
+              "panel_path": "アドレス",
+              "icon": "アイコン",
+              "show_header": "パネルのヘッダーを表示"
+            },
+            "data_description": {
+              "url": "HA からアクセスできる URL。例：http://esphome:6052。",
+              "show_header": "タイトル、メニュー、再読み込みボタン。",
+              "panel_path": "/esphome. 空欄で自動アドレスを使用します。"
+            }
+          },
+          "access": {
+            "name": "アクセス権",
+            "data": {
+              "access": "アクセス権",
+              "users": "選択したユーザー"
+            },
+            "data_description": {
+              "users": "管理者も選択する必要があります。"
+            }
+          },
+          "authentication": {
+            "name": "サービスの認証",
+            "data": {
+              "auth_type": "認証方式",
+              "username": "ユーザー名",
+              "password": "パスワード",
+              "bearer_token": "Bearer トークン"
+            },
+            "data_description": {
+              "auth_type": "ユーザー名なしの Basic はアプリのログインを使用します。Digest には認証情報が必要です。",
+              "password": "HA の設定に個別の暗号化なしで保存されます。",
+              "bearer_token": "サービスのトークンのみ使用。個別の暗号化なしで保存されます。"
+            }
+          },
+          "advanced": {
+            "name": "詳細設定",
+            "data": {
+              "verify_ssl": "TLS 証明書を検証",
+              "rewrite": "アプリの URL を書き換える"
+            },
+            "data_description": {
+              "rewrite": "アプリがプロキシのパスに対応している場合は無効にしてください。"
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "認証情報、クエリ、フラグメントを含まない HTTP(S) を指定してください。",
+      "name_required": "名前を入力してください。",
+      "select_users": "有効なユーザーを1人以上選択してください。",
+      "username_required": "サービスのユーザー名を入力してください。",
+      "invalid_username": "ユーザー名にコロンは使用できません。",
+      "token_required": "サービスのトークンを入力してください。",
+      "invalid_auth_type": "対応する認証方式を選択してください。",
+      "invalid_credentials": "認証情報に改行は使用できません。",
+      "invalid_panel_path": "/ で始めてください。 半角英小文字、数字、-、_ を使用してください。Home Assistant のパスは予約されています。",
+      "panel_path_in_use": "このパスは既に使用されています。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "信頼できるサービスのみ追加してください。ページは Home Assistant と同じオリジンで動作します。",
+        "sections": {
+          "service": {
+            "name": "サービスと外観",
+            "data": {
+              "name": "名前",
+              "url": "サービス URL",
+              "panel_path": "アドレス",
+              "icon": "アイコン",
+              "show_header": "パネルのヘッダーを表示"
+            },
+            "data_description": {
+              "url": "HA からアクセスできる URL。例：http://esphome:6052。",
+              "show_header": "タイトル、メニュー、再読み込みボタン。",
+              "panel_path": "/esphome. 空欄で自動アドレスを使用します。"
+            }
+          },
+          "access": {
+            "name": "アクセス権",
+            "data": {
+              "access": "アクセス権",
+              "users": "選択したユーザー"
+            },
+            "data_description": {
+              "users": "管理者も選択する必要があります。"
+            }
+          },
+          "authentication": {
+            "name": "サービスの認証",
+            "data": {
+              "auth_type": "認証方式",
+              "username": "ユーザー名",
+              "password": "パスワード",
+              "bearer_token": "Bearer トークン"
+            },
+            "data_description": {
+              "auth_type": "ユーザー名なしの Basic はアプリのログインを使用します。Digest には認証情報が必要です。",
+              "password": "HA の設定に個別の暗号化なしで保存されます。",
+              "bearer_token": "サービスのトークンのみ使用。個別の暗号化なしで保存されます。"
+            }
+          },
+          "advanced": {
+            "name": "詳細設定",
+            "data": {
+              "verify_ssl": "TLS 証明書を検証",
+              "rewrite": "アプリの URL を書き換える"
+            },
+            "data_description": {
+              "rewrite": "アプリがプロキシのパスに対応している場合は無効にしてください。"
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "認証情報、クエリ、フラグメントを含まない HTTP(S) を指定してください。",
+      "name_required": "名前を入力してください。",
+      "select_users": "有効なユーザーを1人以上選択してください。",
+      "username_required": "サービスのユーザー名を入力してください。",
+      "invalid_username": "ユーザー名にコロンは使用できません。",
+      "token_required": "サービスのトークンを入力してください。",
+      "invalid_auth_type": "対応する認証方式を選択してください。",
+      "invalid_credentials": "認証情報に改行は使用できません。",
+      "invalid_panel_path": "/ で始めてください。 半角英小文字、数字、-、_ を使用してください。Home Assistant のパスは予約されています。",
+      "panel_path_in_use": "このパスは既に使用されています。"
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "管理者のみ",
+        "authenticated": "ログイン済みの全ユーザー",
+        "users": "選択したユーザー"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "アプリのログイン",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Bearer トークン"
+      }
+    }
+  }
+}

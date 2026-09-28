@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Hanya layanan tepercaya: halamannya berbagi asal dengan Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Layanan dan tampilan",
+            "data": {
+              "name": "Nama",
+              "url": "URL layanan",
+              "panel_path": "Alamat",
+              "icon": "Ikon",
+              "show_header": "Tampilkan header panel"
+            },
+            "data_description": {
+              "url": "Dapat dijangkau dari HA, mis. http://esphome:6052.",
+              "show_header": "Judul, menu, dan tombol muat ulang.",
+              "panel_path": "/esphome. Kosongkan untuk alamat otomatis."
+            }
+          },
+          "access": {
+            "name": "Akses",
+            "data": {
+              "access": "Akses",
+              "users": "Pengguna terpilih"
+            },
+            "data_description": {
+              "users": "Administrator juga harus dipilih."
+            }
+          },
+          "authentication": {
+            "name": "Autentikasi layanan",
+            "data": {
+              "auth_type": "Autentikasi",
+              "username": "Nama pengguna",
+              "password": "Kata sandi",
+              "bearer_token": "Token Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic tanpa nama pengguna memakai login aplikasi. Digest memerlukan kredensial.",
+              "password": "Disimpan dalam konfigurasi HA tanpa enkripsi terpisah.",
+              "bearer_token": "Hanya token layanan; disimpan tanpa enkripsi terpisah."
+            }
+          },
+          "advanced": {
+            "name": "Lanjutan",
+            "data": {
+              "verify_ssl": "Verifikasi sertifikat TLS",
+              "rewrite": "Tulis ulang URL aplikasi"
+            },
+            "data_description": {
+              "rewrite": "Nonaktifkan jika aplikasi sudah mendukung jalur proksi."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Gunakan HTTP(S) tanpa kredensial, kueri, atau fragmen.",
+      "name_required": "Masukkan nama.",
+      "select_users": "Pilih setidaknya satu pengguna aktif.",
+      "username_required": "Masukkan nama pengguna layanan.",
+      "invalid_username": "Nama pengguna tidak boleh mengandung titik dua.",
+      "token_required": "Masukkan token layanan.",
+      "invalid_auth_type": "Pilih jenis autentikasi yang didukung.",
+      "invalid_credentials": "Kredensial tidak boleh mengandung baris baru.",
+      "invalid_panel_path": "Awali dengan /. Gunakan huruf Latin kecil, angka, - atau _. Jalur Home Assistant dicadangkan.",
+      "panel_path_in_use": "Jalur ini sudah digunakan."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Hanya layanan tepercaya: halamannya berbagi asal dengan Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Layanan dan tampilan",
+            "data": {
+              "name": "Nama",
+              "url": "URL layanan",
+              "panel_path": "Alamat",
+              "icon": "Ikon",
+              "show_header": "Tampilkan header panel"
+            },
+            "data_description": {
+              "url": "Dapat dijangkau dari HA, mis. http://esphome:6052.",
+              "show_header": "Judul, menu, dan tombol muat ulang.",
+              "panel_path": "/esphome. Kosongkan untuk alamat otomatis."
+            }
+          },
+          "access": {
+            "name": "Akses",
+            "data": {
+              "access": "Akses",
+              "users": "Pengguna terpilih"
+            },
+            "data_description": {
+              "users": "Administrator juga harus dipilih."
+            }
+          },
+          "authentication": {
+            "name": "Autentikasi layanan",
+            "data": {
+              "auth_type": "Autentikasi",
+              "username": "Nama pengguna",
+              "password": "Kata sandi",
+              "bearer_token": "Token Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic tanpa nama pengguna memakai login aplikasi. Digest memerlukan kredensial.",
+              "password": "Disimpan dalam konfigurasi HA tanpa enkripsi terpisah.",
+              "bearer_token": "Hanya token layanan; disimpan tanpa enkripsi terpisah."
+            }
+          },
+          "advanced": {
+            "name": "Lanjutan",
+            "data": {
+              "verify_ssl": "Verifikasi sertifikat TLS",
+              "rewrite": "Tulis ulang URL aplikasi"
+            },
+            "data_description": {
+              "rewrite": "Nonaktifkan jika aplikasi sudah mendukung jalur proksi."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Gunakan HTTP(S) tanpa kredensial, kueri, atau fragmen.",
+      "name_required": "Masukkan nama.",
+      "select_users": "Pilih setidaknya satu pengguna aktif.",
+      "username_required": "Masukkan nama pengguna layanan.",
+      "invalid_username": "Nama pengguna tidak boleh mengandung titik dua.",
+      "token_required": "Masukkan token layanan.",
+      "invalid_auth_type": "Pilih jenis autentikasi yang didukung.",
+      "invalid_credentials": "Kredensial tidak boleh mengandung baris baru.",
+      "invalid_panel_path": "Awali dengan /. Gunakan huruf Latin kecil, angka, - atau _. Jalur Home Assistant dicadangkan.",
+      "panel_path_in_use": "Jalur ini sudah digunakan."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Hanya administrator",
+        "authenticated": "Semua pengguna yang masuk",
+        "users": "Pengguna terpilih"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Login aplikasi",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Token Bearer"
+      }
+    }
+  }
+}

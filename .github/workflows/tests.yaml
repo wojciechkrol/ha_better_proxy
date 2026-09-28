@@ -1,0 +1,19 @@
+name: Tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        homeassistant: ["2025.10.1", "stable"]
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose -f compose.dev.yaml --profile test run --rm tests
+        env:
+          HA_TEST_IMAGE: ghcr.io/home-assistant/home-assistant:${{ matrix.homeassistant }}
+      - run: node --input-type=module --check < custom_components/better_proxy/frontend/panel.js
+      - run: node --input-type=module --check < custom_components/better_proxy/frontend/translations.js
+      - run: node --check custom_components/better_proxy/frontend/bridge.js
+      - run: python scripts/build_release.py

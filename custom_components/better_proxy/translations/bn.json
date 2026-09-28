@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "শুধু বিশ্বস্ত পরিষেবা: তাদের পেজ Home Assistant-এর একই অরিজিন ব্যবহার করে।",
+        "sections": {
+          "service": {
+            "name": "পরিষেবা ও চেহারা",
+            "data": {
+              "name": "নাম",
+              "url": "পরিষেবার URL",
+              "panel_path": "ঠিকানা",
+              "icon": "আইকন",
+              "show_header": "প্যানেলের শিরোনাম দেখান"
+            },
+            "data_description": {
+              "url": "HA থেকে পৌঁছানো যায়, যেমন http://esphome:6052.",
+              "show_header": "শিরোনাম, মেনু ও পুনরায় লোড বোতাম।",
+              "panel_path": "/esphome. স্বয়ংক্রিয় ঠিকানার জন্য ফাঁকা রাখুন।"
+            }
+          },
+          "access": {
+            "name": "অ্যাক্সেস",
+            "data": {
+              "access": "অ্যাক্সেস",
+              "users": "নির্বাচিত ব্যবহারকারী"
+            },
+            "data_description": {
+              "users": "প্রশাসকদেরও নির্বাচন করতে হবে।"
+            }
+          },
+          "authentication": {
+            "name": "পরিষেবার প্রমাণীকরণ",
+            "data": {
+              "auth_type": "প্রমাণীকরণ",
+              "username": "ব্যবহারকারীর নাম",
+              "password": "পাসওয়ার্ড",
+              "bearer_token": "Bearer টোকেন"
+            },
+            "data_description": {
+              "auth_type": "নাম ছাড়া Basic অ্যাপের লগইন ব্যবহার করে। Digest-এর জন্য লগইন তথ্য প্রয়োজন।",
+              "password": "HA কনফিগারেশনে আলাদা এনক্রিপশন ছাড়া সংরক্ষিত হয়।",
+              "bearer_token": "শুধু পরিষেবার টোকেন; আলাদা এনক্রিপশন ছাড়া সংরক্ষিত হয়।"
+            }
+          },
+          "advanced": {
+            "name": "উন্নত",
+            "data": {
+              "verify_ssl": "TLS সার্টিফিকেট যাচাই",
+              "rewrite": "অ্যাপের URL পুনর্লিখন"
+            },
+            "data_description": {
+              "rewrite": "অ্যাপ আগে থেকেই প্রক্সি পাথ সমর্থন করলে বন্ধ করুন।"
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "লগইন তথ্য, কোয়েরি বা ফ্র্যাগমেন্ট ছাড়া HTTP(S) ব্যবহার করুন।",
+      "name_required": "একটি নাম লিখুন।",
+      "select_users": "অন্তত একজন সক্রিয় ব্যবহারকারী নির্বাচন করুন।",
+      "username_required": "পরিষেবার ব্যবহারকারীর নাম লিখুন।",
+      "invalid_username": "ব্যবহারকারীর নামে কোলন থাকতে পারে না।",
+      "token_required": "পরিষেবার টোকেন লিখুন।",
+      "invalid_auth_type": "সমর্থিত প্রমাণীকরণের ধরন নির্বাচন করুন।",
+      "invalid_credentials": "লগইন তথ্যে নতুন লাইনের অক্ষর থাকতে পারে না।",
+      "invalid_panel_path": "/ দিয়ে শুরু করুন। ছোট হাতের লাতিন অক্ষর, সংখ্যা, - বা _ ব্যবহার করুন। Home Assistant-এর পাথ সংরক্ষিত।",
+      "panel_path_in_use": "এই পাথ ইতিমধ্যে ব্যবহৃত হচ্ছে।"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "শুধু বিশ্বস্ত পরিষেবা: তাদের পেজ Home Assistant-এর একই অরিজিন ব্যবহার করে।",
+        "sections": {
+          "service": {
+            "name": "পরিষেবা ও চেহারা",
+            "data": {
+              "name": "নাম",
+              "url": "পরিষেবার URL",
+              "panel_path": "ঠিকানা",
+              "icon": "আইকন",
+              "show_header": "প্যানেলের শিরোনাম দেখান"
+            },
+            "data_description": {
+              "url": "HA থেকে পৌঁছানো যায়, যেমন http://esphome:6052.",
+              "show_header": "শিরোনাম, মেনু ও পুনরায় লোড বোতাম।",
+              "panel_path": "/esphome. স্বয়ংক্রিয় ঠিকানার জন্য ফাঁকা রাখুন।"
+            }
+          },
+          "access": {
+            "name": "অ্যাক্সেস",
+            "data": {
+              "access": "অ্যাক্সেস",
+              "users": "নির্বাচিত ব্যবহারকারী"
+            },
+            "data_description": {
+              "users": "প্রশাসকদেরও নির্বাচন করতে হবে।"
+            }
+          },
+          "authentication": {
+            "name": "পরিষেবার প্রমাণীকরণ",
+            "data": {
+              "auth_type": "প্রমাণীকরণ",
+              "username": "ব্যবহারকারীর নাম",
+              "password": "পাসওয়ার্ড",
+              "bearer_token": "Bearer টোকেন"
+            },
+            "data_description": {
+              "auth_type": "নাম ছাড়া Basic অ্যাপের লগইন ব্যবহার করে। Digest-এর জন্য লগইন তথ্য প্রয়োজন।",
+              "password": "HA কনফিগারেশনে আলাদা এনক্রিপশন ছাড়া সংরক্ষিত হয়।",
+              "bearer_token": "শুধু পরিষেবার টোকেন; আলাদা এনক্রিপশন ছাড়া সংরক্ষিত হয়।"
+            }
+          },
+          "advanced": {
+            "name": "উন্নত",
+            "data": {
+              "verify_ssl": "TLS সার্টিফিকেট যাচাই",
+              "rewrite": "অ্যাপের URL পুনর্লিখন"
+            },
+            "data_description": {
+              "rewrite": "অ্যাপ আগে থেকেই প্রক্সি পাথ সমর্থন করলে বন্ধ করুন।"
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "লগইন তথ্য, কোয়েরি বা ফ্র্যাগমেন্ট ছাড়া HTTP(S) ব্যবহার করুন।",
+      "name_required": "একটি নাম লিখুন।",
+      "select_users": "অন্তত একজন সক্রিয় ব্যবহারকারী নির্বাচন করুন।",
+      "username_required": "পরিষেবার ব্যবহারকারীর নাম লিখুন।",
+      "invalid_username": "ব্যবহারকারীর নামে কোলন থাকতে পারে না।",
+      "token_required": "পরিষেবার টোকেন লিখুন।",
+      "invalid_auth_type": "সমর্থিত প্রমাণীকরণের ধরন নির্বাচন করুন।",
+      "invalid_credentials": "লগইন তথ্যে নতুন লাইনের অক্ষর থাকতে পারে না।",
+      "invalid_panel_path": "/ দিয়ে শুরু করুন। ছোট হাতের লাতিন অক্ষর, সংখ্যা, - বা _ ব্যবহার করুন। Home Assistant-এর পাথ সংরক্ষিত।",
+      "panel_path_in_use": "এই পাথ ইতিমধ্যে ব্যবহৃত হচ্ছে।"
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "শুধু প্রশাসক",
+        "authenticated": "সব লগইন করা ব্যবহারকারী",
+        "users": "নির্বাচিত ব্যবহারকারী"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "অ্যাপের লগইন",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Bearer টোকেন"
+      }
+    }
+  }
+}

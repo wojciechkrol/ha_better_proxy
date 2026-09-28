@@ -1,0 +1,17 @@
+{
+  "domain": "better_proxy",
+  "name": "Better Proxy",
+  "codeowners": ["@wojciechkrol"],
+  "config_flow": true,
+  "dependencies": [
+    "frontend",
+    "http",
+    "panel_custom"
+  ],
+  "documentation": "https://github.com/wojciechkrol/ha_better_proxy",
+  "integration_type": "service",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/wojciechkrol/ha_better_proxy/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Trusted services only: their pages share Home Assistant's origin.",
+        "sections": {
+          "service": {
+            "name": "Service and appearance",
+            "data": {
+              "name": "Name",
+              "url": "Service URL",
+              "panel_path": "Address",
+              "icon": "Icon",
+              "show_header": "Show panel header"
+            },
+            "data_description": {
+              "url": "Reachable from HA, e.g. http://esphome:6052.",
+              "show_header": "Title, menu and reload controls.",
+              "panel_path": "/esphome. Leave blank for an automatic address."
+            }
+          },
+          "access": {
+            "name": "Access",
+            "data": {
+              "access": "Access",
+              "users": "Selected users"
+            },
+            "data_description": {
+              "users": "Administrators must also be selected."
+            }
+          },
+          "authentication": {
+            "name": "Service authentication",
+            "data": {
+              "auth_type": "Authentication",
+              "username": "Username",
+              "password": "Password",
+              "bearer_token": "Bearer token"
+            },
+            "data_description": {
+              "auth_type": "Basic without a username uses application login. Digest requires credentials.",
+              "password": "Stored in HA configuration without separate encryption.",
+              "bearer_token": "Service token only; stored without separate encryption."
+            }
+          },
+          "advanced": {
+            "name": "Advanced",
+            "data": {
+              "verify_ssl": "Verify TLS certificate",
+              "rewrite": "Rewrite application URLs"
+            },
+            "data_description": {
+              "rewrite": "Disable if the application already supports the proxy path."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Use HTTP(S), without credentials, query or fragment.",
+      "name_required": "Enter a name.",
+      "select_users": "Select at least one active user.",
+      "username_required": "Enter the service username.",
+      "invalid_username": "The username cannot contain a colon.",
+      "token_required": "Enter the service token.",
+      "invalid_auth_type": "Select a supported authentication type.",
+      "invalid_credentials": "Credentials cannot contain line breaks.",
+      "invalid_panel_path": "Start with /. Use lowercase letters, digits, - or _. Home Assistant paths are reserved.",
+      "panel_path_in_use": "This path is already in use."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Trusted services only: their pages share Home Assistant's origin.",
+        "sections": {
+          "service": {
+            "name": "Service and appearance",
+            "data": {
+              "name": "Name",
+              "url": "Service URL",
+              "panel_path": "Address",
+              "icon": "Icon",
+              "show_header": "Show panel header"
+            },
+            "data_description": {
+              "url": "Reachable from HA, e.g. http://esphome:6052.",
+              "show_header": "Title, menu and reload controls.",
+              "panel_path": "/esphome. Leave blank for an automatic address."
+            }
+          },
+          "access": {
+            "name": "Access",
+            "data": {
+              "access": "Access",
+              "users": "Selected users"
+            },
+            "data_description": {
+              "users": "Administrators must also be selected."
+            }
+          },
+          "authentication": {
+            "name": "Service authentication",
+            "data": {
+              "auth_type": "Authentication",
+              "username": "Username",
+              "password": "Password",
+              "bearer_token": "Bearer token"
+            },
+            "data_description": {
+              "auth_type": "Basic without a username uses application login. Digest requires credentials.",
+              "password": "Stored in HA configuration without separate encryption.",
+              "bearer_token": "Service token only; stored without separate encryption."
+            }
+          },
+          "advanced": {
+            "name": "Advanced",
+            "data": {
+              "verify_ssl": "Verify TLS certificate",
+              "rewrite": "Rewrite application URLs"
+            },
+            "data_description": {
+              "rewrite": "Disable if the application already supports the proxy path."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Use HTTP(S), without credentials, query or fragment.",
+      "name_required": "Enter a name.",
+      "select_users": "Select at least one active user.",
+      "username_required": "Enter the service username.",
+      "invalid_username": "The username cannot contain a colon.",
+      "token_required": "Enter the service token.",
+      "invalid_auth_type": "Select a supported authentication type.",
+      "invalid_credentials": "Credentials cannot contain line breaks.",
+      "invalid_panel_path": "Start with /. Use lowercase letters, digits, - or _. Home Assistant paths are reserved.",
+      "panel_path_in_use": "This path is already in use."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Administrators only",
+        "authenticated": "All signed-in users",
+        "users": "Selected users"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Application login",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Bearer token"
+      }
+    }
+  }
+}

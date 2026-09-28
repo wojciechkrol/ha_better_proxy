@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Pouze důvěryhodné služby: jejich stránky sdílejí původ s Home Assistantem.",
+        "sections": {
+          "service": {
+            "name": "Služba a vzhled",
+            "data": {
+              "name": "Název",
+              "url": "URL služby",
+              "panel_path": "Adresa",
+              "icon": "Ikona",
+              "show_header": "Zobrazit záhlaví panelu"
+            },
+            "data_description": {
+              "url": "Dostupná z HA, např. http://esphome:6052.",
+              "show_header": "Název, nabídka a tlačítko obnovení.",
+              "panel_path": "/esphome. Prázdné pole použije automatickou adresu."
+            }
+          },
+          "access": {
+            "name": "Přístup",
+            "data": {
+              "access": "Přístup",
+              "users": "Vybraní uživatelé"
+            },
+            "data_description": {
+              "users": "Vyberte také správce, kteří mají mít přístup."
+            }
+          },
+          "authentication": {
+            "name": "Přihlášení ke službě",
+            "data": {
+              "auth_type": "Ověřování",
+              "username": "Uživatelské jméno",
+              "password": "Heslo",
+              "bearer_token": "Token Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic bez jména používá přihlášení aplikace. Digest vyžaduje přihlašovací údaje.",
+              "password": "Uloženo v konfiguraci HA bez samostatného šifrování.",
+              "bearer_token": "Pouze token služby; uložen bez samostatného šifrování."
+            }
+          },
+          "advanced": {
+            "name": "Pokročilé",
+            "data": {
+              "verify_ssl": "Ověřit certifikát TLS",
+              "rewrite": "Přepisovat URL aplikace"
+            },
+            "data_description": {
+              "rewrite": "Vypněte, pokud aplikace již podporuje cestu proxy."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Použijte HTTP(S) bez přihlašovacích údajů, dotazu či fragmentu.",
+      "name_required": "Zadejte název.",
+      "select_users": "Vyberte alespoň jednoho aktivního uživatele.",
+      "username_required": "Zadejte uživatelské jméno služby.",
+      "invalid_username": "Uživatelské jméno nesmí obsahovat dvojtečku.",
+      "token_required": "Zadejte token služby.",
+      "invalid_auth_type": "Vyberte podporovaný typ ověřování.",
+      "invalid_credentials": "Přihlašovací údaje nesmí obsahovat konce řádků.",
+      "invalid_panel_path": "Začněte znakem /. Použijte malá písmena bez diakritiky, číslice, - nebo _. Cesty Home Assistant jsou vyhrazené.",
+      "panel_path_in_use": "Tato cesta se již používá."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Pouze důvěryhodné služby: jejich stránky sdílejí původ s Home Assistantem.",
+        "sections": {
+          "service": {
+            "name": "Služba a vzhled",
+            "data": {
+              "name": "Název",
+              "url": "URL služby",
+              "panel_path": "Adresa",
+              "icon": "Ikona",
+              "show_header": "Zobrazit záhlaví panelu"
+            },
+            "data_description": {
+              "url": "Dostupná z HA, např. http://esphome:6052.",
+              "show_header": "Název, nabídka a tlačítko obnovení.",
+              "panel_path": "/esphome. Prázdné pole použije automatickou adresu."
+            }
+          },
+          "access": {
+            "name": "Přístup",
+            "data": {
+              "access": "Přístup",
+              "users": "Vybraní uživatelé"
+            },
+            "data_description": {
+              "users": "Vyberte také správce, kteří mají mít přístup."
+            }
+          },
+          "authentication": {
+            "name": "Přihlášení ke službě",
+            "data": {
+              "auth_type": "Ověřování",
+              "username": "Uživatelské jméno",
+              "password": "Heslo",
+              "bearer_token": "Token Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic bez jména používá přihlášení aplikace. Digest vyžaduje přihlašovací údaje.",
+              "password": "Uloženo v konfiguraci HA bez samostatného šifrování.",
+              "bearer_token": "Pouze token služby; uložen bez samostatného šifrování."
+            }
+          },
+          "advanced": {
+            "name": "Pokročilé",
+            "data": {
+              "verify_ssl": "Ověřit certifikát TLS",
+              "rewrite": "Přepisovat URL aplikace"
+            },
+            "data_description": {
+              "rewrite": "Vypněte, pokud aplikace již podporuje cestu proxy."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Použijte HTTP(S) bez přihlašovacích údajů, dotazu či fragmentu.",
+      "name_required": "Zadejte název.",
+      "select_users": "Vyberte alespoň jednoho aktivního uživatele.",
+      "username_required": "Zadejte uživatelské jméno služby.",
+      "invalid_username": "Uživatelské jméno nesmí obsahovat dvojtečku.",
+      "token_required": "Zadejte token služby.",
+      "invalid_auth_type": "Vyberte podporovaný typ ověřování.",
+      "invalid_credentials": "Přihlašovací údaje nesmí obsahovat konce řádků.",
+      "invalid_panel_path": "Začněte znakem /. Použijte malá písmena bez diakritiky, číslice, - nebo _. Cesty Home Assistant jsou vyhrazené.",
+      "panel_path_in_use": "Tato cesta se již používá."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Pouze správci",
+        "authenticated": "Všichni přihlášení uživatelé",
+        "users": "Vybraní uživatelé"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Přihlášení v aplikaci",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Token Bearer"
+      }
+    }
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Services de confiance uniquement : leurs pages partagent l’origine de Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Service et apparence",
+            "data": {
+              "name": "Nom",
+              "url": "URL du service",
+              "panel_path": "Adresse",
+              "icon": "Icône",
+              "show_header": "Afficher l’en-tête du panneau"
+            },
+            "data_description": {
+              "url": "Accessible depuis HA, par ex. http://esphome:6052.",
+              "show_header": "Titre, menu et bouton de rechargement.",
+              "panel_path": "/esphome. Laisser vide pour une adresse automatique."
+            }
+          },
+          "access": {
+            "name": "Accès",
+            "data": {
+              "access": "Accès",
+              "users": "Utilisateurs sélectionnés"
+            },
+            "data_description": {
+              "users": "Les administrateurs doivent aussi être sélectionnés."
+            }
+          },
+          "authentication": {
+            "name": "Authentification du service",
+            "data": {
+              "auth_type": "Authentification",
+              "username": "Nom d’utilisateur",
+              "password": "Mot de passe",
+              "bearer_token": "Jeton Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic sans identifiant utilise la connexion de l’application. Digest exige des identifiants.",
+              "password": "Enregistré dans la configuration HA sans chiffrement supplémentaire.",
+              "bearer_token": "Jeton du service uniquement ; enregistré sans chiffrement supplémentaire."
+            }
+          },
+          "advanced": {
+            "name": "Avancé",
+            "data": {
+              "verify_ssl": "Vérifier le certificat TLS",
+              "rewrite": "Réécrire les URL de l’application"
+            },
+            "data_description": {
+              "rewrite": "Désactivez si l’application prend déjà en charge le chemin du proxy."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Utilisez HTTP(S) sans identifiants, paramètres ni fragment.",
+      "name_required": "Saisissez un nom.",
+      "select_users": "Sélectionnez au moins un utilisateur actif.",
+      "username_required": "Saisissez le nom d’utilisateur du service.",
+      "invalid_username": "Le nom d’utilisateur ne peut pas contenir de deux-points.",
+      "token_required": "Saisissez le jeton du service.",
+      "invalid_auth_type": "Sélectionnez un type d’authentification pris en charge.",
+      "invalid_credentials": "Les identifiants ne peuvent pas contenir de sauts de ligne.",
+      "invalid_panel_path": "Commencez par /. Utilisez des lettres latines minuscules sans accents, des chiffres, - ou _. Les chemins de Home Assistant sont réservés.",
+      "panel_path_in_use": "Ce chemin est déjà utilisé."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Services de confiance uniquement : leurs pages partagent l’origine de Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Service et apparence",
+            "data": {
+              "name": "Nom",
+              "url": "URL du service",
+              "panel_path": "Adresse",
+              "icon": "Icône",
+              "show_header": "Afficher l’en-tête du panneau"
+            },
+            "data_description": {
+              "url": "Accessible depuis HA, par ex. http://esphome:6052.",
+              "show_header": "Titre, menu et bouton de rechargement.",
+              "panel_path": "/esphome. Laisser vide pour une adresse automatique."
+            }
+          },
+          "access": {
+            "name": "Accès",
+            "data": {
+              "access": "Accès",
+              "users": "Utilisateurs sélectionnés"
+            },
+            "data_description": {
+              "users": "Les administrateurs doivent aussi être sélectionnés."
+            }
+          },
+          "authentication": {
+            "name": "Authentification du service",
+            "data": {
+              "auth_type": "Authentification",
+              "username": "Nom d’utilisateur",
+              "password": "Mot de passe",
+              "bearer_token": "Jeton Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic sans identifiant utilise la connexion de l’application. Digest exige des identifiants.",
+              "password": "Enregistré dans la configuration HA sans chiffrement supplémentaire.",
+              "bearer_token": "Jeton du service uniquement ; enregistré sans chiffrement supplémentaire."
+            }
+          },
+          "advanced": {
+            "name": "Avancé",
+            "data": {
+              "verify_ssl": "Vérifier le certificat TLS",
+              "rewrite": "Réécrire les URL de l’application"
+            },
+            "data_description": {
+              "rewrite": "Désactivez si l’application prend déjà en charge le chemin du proxy."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Utilisez HTTP(S) sans identifiants, paramètres ni fragment.",
+      "name_required": "Saisissez un nom.",
+      "select_users": "Sélectionnez au moins un utilisateur actif.",
+      "username_required": "Saisissez le nom d’utilisateur du service.",
+      "invalid_username": "Le nom d’utilisateur ne peut pas contenir de deux-points.",
+      "token_required": "Saisissez le jeton du service.",
+      "invalid_auth_type": "Sélectionnez un type d’authentification pris en charge.",
+      "invalid_credentials": "Les identifiants ne peuvent pas contenir de sauts de ligne.",
+      "invalid_panel_path": "Commencez par /. Utilisez des lettres latines minuscules sans accents, des chiffres, - ou _. Les chemins de Home Assistant sont réservés.",
+      "panel_path_in_use": "Ce chemin est déjà utilisé."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Administrateurs uniquement",
+        "authenticated": "Tous les utilisateurs connectés",
+        "users": "Utilisateurs sélectionnés"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Connexion de l’application",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Jeton Bearer"
+      }
+    }
+  }
+}

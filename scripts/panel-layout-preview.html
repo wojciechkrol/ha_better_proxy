@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Better Proxy layout checks</title>
+  <style>
+    html, body { margin: 0; font-family: system-ui, sans-serif; }
+    body { background: #f3f5f7; color: #17232c; }
+    main { padding: 24px; }
+    .cases { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+    .case { max-width: 100%; overflow: auto; }
+    .case > iframe { display: block; border: 1px solid #a9b6bf; }
+    button { padding: 12px; margin: 8px 0; }
+    output { display: block; padding: 8px 0; }
+  </style>
+</head>
+<body>
+<script>
+const cases = [
+  { id: 'mobile-ha', name: 'Mobile / HA safe-area wrapper', width: 390, height: 844, wrapped: true, header: true, insets: [44, 0, 34, 0] },
+  { id: 'mobile-legacy', name: 'Mobile / older HA', width: 390, height: 844, wrapped: false, header: true, insets: [44, 0, 34, 0] },
+  { id: 'hidden-ha', name: 'Hidden header / HA wrapper', width: 390, height: 844, wrapped: true, header: false, insets: [44, 0, 34, 0] },
+  { id: 'hidden-legacy', name: 'Hidden header / older HA', width: 390, height: 844, wrapped: false, header: false, insets: [44, 0, 34, 0] },
+  { id: 'landscape', name: 'Landscape / side safe areas', width: 844, height: 390, wrapped: true, header: true, insets: [0, 44, 21, 44] },
+  { id: 'native-inset', name: 'Native viewport already inset', width: 390, height: 766, wrapped: true, header: true, insets: [0, 0, 0, 0] },
+  { id: 'desktop', name: 'Desktop / no safe area', width: 1024, height: 720, wrapped: false, header: true, insets: [0, 0, 0, 0] },
+];
+const selected = new URLSearchParams(location.search).get('case');
+if (!selected) {
+  const main = document.createElement('main');
+  main.innerHTML = '<h1>Better Proxy layout checks</h1><p>Real panel code with simulated HA wrappers and device insets. This does not replace testing in iOS Companion.</p><button id="keyboard">Toggle reduced viewport</button> <button id="pull">Toggle pull displacement</button><div class="cases"></div>';
+  document.body.append(main);
+  for (const c of cases) {
+    const block = document.createElement('section'); block.className = 'case';
+    const title = document.createElement('h2'); title.textContent = c.name;
+    const result = document.createElement('output'); result.id = c.id; result.textContent = 'Checking…';
+    const frame = document.createElement('iframe'); frame.title = c.name;
+    frame.width = c.width; frame.height = c.height; frame.src = '?case=' + c.id;
+    block.append(title, result, frame); main.querySelector('.cases').append(block);
+  }
+  window.addEventListener('message', event => {
+    if (event.origin !== location.origin || event.data?.type !== 'panel-layout') return;
+    const c = cases.find(c => c.id === event.data.id);
+    if (!c) return;
+    const result = document.getElementById(c.id);
+    result.textContent = event.data.result;
+    result.dataset.pass = String(event.data.pass);
+  });
+  document.getElementById('keyboard').onclick = () => {
+    const frame = document.querySelector('.case > iframe');
+    frame.height = Number(frame.height) === 844 ? 500 : 844;
+  };
+  document.getElementById('pull').onclick = () => {
+    for (const frame of document.querySelectorAll('.case > iframe')) {
+      frame.contentWindow.postMessage({type:'toggle-pull'},location.origin);
+    }
+  };
+} else if (selected === 'upstream') {
+  document.body.innerHTML = '<p>Application fills available space</p><footer>Application footer reaches bottom edge</footer>';
+  const style = document.createElement('style');
+  style.textContent = 'html,body{height:100%;margin:0}body{background:#e5f6fc;font:20px system-ui;display:grid;place-items:center}footer{position:fixed;bottom:0;left:0;right:0;background:#006c87;color:white;padding:16px;text-align:center}';
+  document.head.append(style);
+} else {
+  const c = cases.find(c => c.id === selected);
+  if (!c) throw new Error('Unknown case');
+  const [top, right, bottom, left] = c.insets;
+  const style = document.createElement('style');
+  style.textContent = `html, body { height:100%; overflow:hidden; } :root { --safe-area-inset-top:${top}px; --safe-area-inset-right:${right}px; --safe-area-inset-bottom:${bottom}px; --safe-area-inset-left:${left}px; --header-height:56px; --primary-background-color:#111; --primary-text-color:#eee; --app-header-background-color:#1c1c1c; --app-header-text-color:#eee; --divider-color:#333; --card-background-color:#fff; } ha-panel-custom { background:var(--primary-background-color); display:block; box-sizing:border-box; ${c.wrapped ? `padding:${top}px ${right}px ${bottom}px ${left}px;` : ''} }`;
+  document.head.append(style);
+  const wrapper = document.createElement('ha-panel-custom'); document.body.append(wrapper);
+  const script = document.createElement('script'); script.type = 'module'; script.src = '../custom_components/better_proxy/frontend/panel.js';
+  script.onload = async () => {
+    await customElements.whenDefined('better-proxy-panel');
+    const panel = document.createElement('better-proxy-panel');
+    panel.hass = { language:'en', callApi:async () => ({url:location.pathname + '?case=upstream'}) };
+    panel.panel = { config: { title:'Mobile Proxy', entry_id:'layout-test', show_header:c.header } };
+    panel.narrow = c.width < 870;
+    wrapper.append(panel);
+    let pull = 0;
+    const check = () => requestAnimationFrame(() => requestAnimationFrame(() => {
+      const frame = panel.shadowRoot.querySelector('iframe').getBoundingClientRect();
+      const header = panel.shadowRoot.querySelector('header').getBoundingClientRect();
+      const expected = {x:left,y:top+(c.header?56:0)+pull,width:innerWidth-left-right,height:innerHeight-top-(c.header?56:0)};
+      const pass = Object.entries(expected).every(([k,v]) => Math.abs(frame[k]-v)<1) && Math.abs(header.height-(c.header?56:0))<1 && (pull > 0 || document.documentElement.scrollHeight<=innerHeight);
+      const result = `${pass?'PASS':'FAIL'}: iframe ${Math.round(frame.width)}×${Math.round(frame.height)}, top ${Math.round(frame.y)}, bottom gap ${Math.round(innerHeight+pull-frame.bottom)}, pull ${pull}`;
+      parent.postMessage({type:'panel-layout',id:c.id,pass,result},location.origin);
+    }));
+    window.addEventListener('resize',check);
+    window.addEventListener('message', event => {
+      if (event.origin !== location.origin || event.source !== parent || event.data?.type !== 'toggle-pull') return;
+      pull = pull ? 0 : 80;
+      wrapper.style.transform = `translateY(${pull}px)`;
+      // Simulate viewport notifications during overscroll, including an extra
+      // layout pass: movement must never feed back into the iframe dimensions.
+      window.visualViewport?.dispatchEvent(new Event('scroll'));
+      window.visualViewport?.dispatchEvent(new Event('resize'));
+      window.dispatchEvent(new Event('resize'));
+      check();
+    });
+    check();
+  };
+  document.body.append(script);
+}
+</script>
+</body>
+</html>

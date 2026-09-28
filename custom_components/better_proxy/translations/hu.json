@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Csak megbízható szolgáltatások: oldalaik a Home Assistant eredetét használják.",
+        "sections": {
+          "service": {
+            "name": "Szolgáltatás és megjelenés",
+            "data": {
+              "name": "Név",
+              "url": "Szolgáltatás URL-je",
+              "panel_path": "Cím",
+              "icon": "Ikon",
+              "show_header": "Panelfejléc megjelenítése"
+            },
+            "data_description": {
+              "url": "A HA-ból elérhető, pl. http://esphome:6052.",
+              "show_header": "Cím, menü és újratöltési gomb.",
+              "panel_path": "/esphome. Automatikus címhez hagyja üresen."
+            }
+          },
+          "access": {
+            "name": "Hozzáférés",
+            "data": {
+              "access": "Hozzáférés",
+              "users": "Kiválasztott felhasználók"
+            },
+            "data_description": {
+              "users": "Az adminisztrátorokat is ki kell választani."
+            }
+          },
+          "authentication": {
+            "name": "Szolgáltatás hitelesítése",
+            "data": {
+              "auth_type": "Hitelesítés",
+              "username": "Felhasználónév",
+              "password": "Jelszó",
+              "bearer_token": "Bearer-token"
+            },
+            "data_description": {
+              "auth_type": "A Basic felhasználónév nélkül az alkalmazás bejelentkezését használja. A Digest hitelesítő adatokat igényel.",
+              "password": "A HA beállításaiban tárolva, külön titkosítás nélkül.",
+              "bearer_token": "Csak szolgáltatástoken; külön titkosítás nélkül tárolva."
+            }
+          },
+          "advanced": {
+            "name": "Haladó",
+            "data": {
+              "verify_ssl": "TLS-tanúsítvány ellenőrzése",
+              "rewrite": "Alkalmazás URL-jeinek átírása"
+            },
+            "data_description": {
+              "rewrite": "Kapcsolja ki, ha az alkalmazás már támogatja a proxy útvonalát."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "HTTP(S)-címet adjon meg hitelesítő adatok, lekérdezés és töredék nélkül.",
+      "name_required": "Adjon meg egy nevet.",
+      "select_users": "Válasszon legalább egy aktív felhasználót.",
+      "username_required": "Adja meg a szolgáltatás felhasználónevét.",
+      "invalid_username": "A felhasználónév nem tartalmazhat kettőspontot.",
+      "token_required": "Adja meg a szolgáltatás tokenjét.",
+      "invalid_auth_type": "Válasszon támogatott hitelesítési módot.",
+      "invalid_credentials": "A hitelesítő adatok nem tartalmazhatnak sortörést.",
+      "invalid_panel_path": "Kezdje / jellel. Használjon ékezet nélküli kisbetűket, számjegyeket, - vagy _ jelet. A Home Assistant útvonalai foglaltak.",
+      "panel_path_in_use": "Ez az útvonal már használatban van."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Csak megbízható szolgáltatások: oldalaik a Home Assistant eredetét használják.",
+        "sections": {
+          "service": {
+            "name": "Szolgáltatás és megjelenés",
+            "data": {
+              "name": "Név",
+              "url": "Szolgáltatás URL-je",
+              "panel_path": "Cím",
+              "icon": "Ikon",
+              "show_header": "Panelfejléc megjelenítése"
+            },
+            "data_description": {
+              "url": "A HA-ból elérhető, pl. http://esphome:6052.",
+              "show_header": "Cím, menü és újratöltési gomb.",
+              "panel_path": "/esphome. Automatikus címhez hagyja üresen."
+            }
+          },
+          "access": {
+            "name": "Hozzáférés",
+            "data": {
+              "access": "Hozzáférés",
+              "users": "Kiválasztott felhasználók"
+            },
+            "data_description": {
+              "users": "Az adminisztrátorokat is ki kell választani."
+            }
+          },
+          "authentication": {
+            "name": "Szolgáltatás hitelesítése",
+            "data": {
+              "auth_type": "Hitelesítés",
+              "username": "Felhasználónév",
+              "password": "Jelszó",
+              "bearer_token": "Bearer-token"
+            },
+            "data_description": {
+              "auth_type": "A Basic felhasználónév nélkül az alkalmazás bejelentkezését használja. A Digest hitelesítő adatokat igényel.",
+              "password": "A HA beállításaiban tárolva, külön titkosítás nélkül.",
+              "bearer_token": "Csak szolgáltatástoken; külön titkosítás nélkül tárolva."
+            }
+          },
+          "advanced": {
+            "name": "Haladó",
+            "data": {
+              "verify_ssl": "TLS-tanúsítvány ellenőrzése",
+              "rewrite": "Alkalmazás URL-jeinek átírása"
+            },
+            "data_description": {
+              "rewrite": "Kapcsolja ki, ha az alkalmazás már támogatja a proxy útvonalát."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "HTTP(S)-címet adjon meg hitelesítő adatok, lekérdezés és töredék nélkül.",
+      "name_required": "Adjon meg egy nevet.",
+      "select_users": "Válasszon legalább egy aktív felhasználót.",
+      "username_required": "Adja meg a szolgáltatás felhasználónevét.",
+      "invalid_username": "A felhasználónév nem tartalmazhat kettőspontot.",
+      "token_required": "Adja meg a szolgáltatás tokenjét.",
+      "invalid_auth_type": "Válasszon támogatott hitelesítési módot.",
+      "invalid_credentials": "A hitelesítő adatok nem tartalmazhatnak sortörést.",
+      "invalid_panel_path": "Kezdje / jellel. Használjon ékezet nélküli kisbetűket, számjegyeket, - vagy _ jelet. A Home Assistant útvonalai foglaltak.",
+      "panel_path_in_use": "Ez az útvonal már használatban van."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Csak adminisztrátorok",
+        "authenticated": "Minden bejelentkezett felhasználó",
+        "users": "Kiválasztott felhasználók"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Alkalmazás bejelentkezése",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Bearer-token"
+      }
+    }
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Tylko zaufane usługi: ich strony działają w domenie Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Usługa i wygląd",
+            "data": {
+              "name": "Nazwa",
+              "url": "Adres usługi",
+              "panel_path": "Adres",
+              "icon": "Ikona",
+              "show_header": "Pokaż nagłówek panelu"
+            },
+            "data_description": {
+              "url": "Adres osiągalny z HA, np. http://esphome:6052.",
+              "show_header": "Nazwa, przycisk menu i odświeżanie.",
+              "panel_path": "/esphome. Puste pole oznacza adres automatyczny."
+            }
+          },
+          "access": {
+            "name": "Dostęp",
+            "data": {
+              "access": "Dostęp",
+              "users": "Wybrani użytkownicy"
+            },
+            "data_description": {
+              "users": "Zaznacz także administratorów, którzy mają mieć dostęp."
+            }
+          },
+          "authentication": {
+            "name": "Logowanie do usługi",
+            "data": {
+              "auth_type": "Uwierzytelnianie",
+              "username": "Nazwa użytkownika",
+              "password": "Hasło",
+              "bearer_token": "Token Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic bez nazwy użytkownika pozostawia logowanie aplikacji. Digest wymaga danych logowania.",
+              "password": "Zapisane w konfiguracji HA bez osobnego szyfrowania.",
+              "bearer_token": "Tylko token usługi; zapisany bez osobnego szyfrowania."
+            }
+          },
+          "advanced": {
+            "name": "Zaawansowane",
+            "data": {
+              "verify_ssl": "Weryfikuj certyfikat TLS",
+              "rewrite": "Dostosuj adresy URL aplikacji"
+            },
+            "data_description": {
+              "rewrite": "Wyłącz, jeśli aplikacja już obsługuje ścieżkę proxy."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Podaj HTTP(S) bez danych logowania, zapytania i fragmentu.",
+      "name_required": "Podaj nazwę.",
+      "select_users": "Wybierz co najmniej jednego aktywnego użytkownika.",
+      "username_required": "Podaj nazwę użytkownika usługi.",
+      "invalid_username": "Nazwa użytkownika nie może zawierać dwukropka.",
+      "token_required": "Podaj token usługi.",
+      "invalid_auth_type": "Wybierz obsługiwany typ uwierzytelniania.",
+      "invalid_credentials": "Dane logowania nie mogą zawierać znaków nowej linii.",
+      "invalid_panel_path": "Zacznij od /. Użyj małych liter, cyfr, - lub _. Ścieżki Home Assistant są zarezerwowane.",
+      "panel_path_in_use": "Ta ścieżka jest już zajęta."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Tylko zaufane usługi: ich strony działają w domenie Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Usługa i wygląd",
+            "data": {
+              "name": "Nazwa",
+              "url": "Adres usługi",
+              "panel_path": "Adres",
+              "icon": "Ikona",
+              "show_header": "Pokaż nagłówek panelu"
+            },
+            "data_description": {
+              "url": "Adres osiągalny z HA, np. http://esphome:6052.",
+              "show_header": "Nazwa, przycisk menu i odświeżanie.",
+              "panel_path": "/esphome. Puste pole oznacza adres automatyczny."
+            }
+          },
+          "access": {
+            "name": "Dostęp",
+            "data": {
+              "access": "Dostęp",
+              "users": "Wybrani użytkownicy"
+            },
+            "data_description": {
+              "users": "Zaznacz także administratorów, którzy mają mieć dostęp."
+            }
+          },
+          "authentication": {
+            "name": "Logowanie do usługi",
+            "data": {
+              "auth_type": "Uwierzytelnianie",
+              "username": "Nazwa użytkownika",
+              "password": "Hasło",
+              "bearer_token": "Token Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic bez nazwy użytkownika pozostawia logowanie aplikacji. Digest wymaga danych logowania.",
+              "password": "Zapisane w konfiguracji HA bez osobnego szyfrowania.",
+              "bearer_token": "Tylko token usługi; zapisany bez osobnego szyfrowania."
+            }
+          },
+          "advanced": {
+            "name": "Zaawansowane",
+            "data": {
+              "verify_ssl": "Weryfikuj certyfikat TLS",
+              "rewrite": "Dostosuj adresy URL aplikacji"
+            },
+            "data_description": {
+              "rewrite": "Wyłącz, jeśli aplikacja już obsługuje ścieżkę proxy."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Podaj HTTP(S) bez danych logowania, zapytania i fragmentu.",
+      "name_required": "Podaj nazwę.",
+      "select_users": "Wybierz co najmniej jednego aktywnego użytkownika.",
+      "username_required": "Podaj nazwę użytkownika usługi.",
+      "invalid_username": "Nazwa użytkownika nie może zawierać dwukropka.",
+      "token_required": "Podaj token usługi.",
+      "invalid_auth_type": "Wybierz obsługiwany typ uwierzytelniania.",
+      "invalid_credentials": "Dane logowania nie mogą zawierać znaków nowej linii.",
+      "invalid_panel_path": "Zacznij od /. Użyj małych liter, cyfr, - lub _. Ścieżki Home Assistant są zarezerwowane.",
+      "panel_path_in_use": "Ta ścieżka jest już zajęta."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Tylko administratorzy",
+        "authenticated": "Wszyscy zalogowani użytkownicy",
+        "users": "Wybrani użytkownicy"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Logowanie w aplikacji",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Token Bearer"
+      }
+    }
+  }
+}

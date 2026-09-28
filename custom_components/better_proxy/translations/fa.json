@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "فقط سرویس‌های مورد اعتماد: صفحه‌های آن‌ها مبدأ Home Assistant را به اشتراک می‌گذارند.",
+        "sections": {
+          "service": {
+            "name": "سرویس و ظاهر",
+            "data": {
+              "name": "نام",
+              "url": "نشانی سرویس",
+              "panel_path": "نشانی",
+              "icon": "نماد",
+              "show_header": "نمایش سربرگ پنل"
+            },
+            "data_description": {
+              "url": "از HA قابل دسترس، مانند http://esphome:6052.",
+              "show_header": "عنوان، منو و دکمه بارگذاری مجدد.",
+              "panel_path": "/esphome. برای نشانی خودکار خالی بگذارید."
+            }
+          },
+          "access": {
+            "name": "دسترسی",
+            "data": {
+              "access": "دسترسی",
+              "users": "کاربران انتخاب‌شده"
+            },
+            "data_description": {
+              "users": "مدیران نیز باید انتخاب شوند."
+            }
+          },
+          "authentication": {
+            "name": "احراز هویت سرویس",
+            "data": {
+              "auth_type": "احراز هویت",
+              "username": "نام کاربری",
+              "password": "گذرواژه",
+              "bearer_token": "توکن Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic بدون نام کاربری از ورود برنامه استفاده می‌کند. Digest به اطلاعات ورود نیاز دارد.",
+              "password": "در تنظیمات HA بدون رمزگذاری جداگانه ذخیره می‌شود.",
+              "bearer_token": "فقط توکن سرویس؛ بدون رمزگذاری جداگانه ذخیره می‌شود."
+            }
+          },
+          "advanced": {
+            "name": "پیشرفته",
+            "data": {
+              "verify_ssl": "بررسی گواهی TLS",
+              "rewrite": "بازنویسی نشانی‌های برنامه"
+            },
+            "data_description": {
+              "rewrite": "اگر برنامه از مسیر پراکسی پشتیبانی می‌کند، غیرفعال کنید."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "از HTTP(S) بدون اطلاعات ورود، پرس‌وجو یا بخش نشانی استفاده کنید.",
+      "name_required": "نامی وارد کنید.",
+      "select_users": "حداقل یک کاربر فعال انتخاب کنید.",
+      "username_required": "نام کاربری سرویس را وارد کنید.",
+      "invalid_username": "نام کاربری نمی‌تواند دونقطه داشته باشد.",
+      "token_required": "توکن سرویس را وارد کنید.",
+      "invalid_auth_type": "نوع احراز هویت پشتیبانی‌شده را انتخاب کنید.",
+      "invalid_credentials": "اطلاعات ورود نمی‌تواند نویسه خط جدید داشته باشد.",
+      "invalid_panel_path": "با / شروع کنید. از حروف کوچک لاتین، رقم، - یا _ استفاده کنید. مسیرهای Home Assistant رزرو شده‌اند.",
+      "panel_path_in_use": "این مسیر از قبل در حال استفاده است."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "فقط سرویس‌های مورد اعتماد: صفحه‌های آن‌ها مبدأ Home Assistant را به اشتراک می‌گذارند.",
+        "sections": {
+          "service": {
+            "name": "سرویس و ظاهر",
+            "data": {
+              "name": "نام",
+              "url": "نشانی سرویس",
+              "panel_path": "نشانی",
+              "icon": "نماد",
+              "show_header": "نمایش سربرگ پنل"
+            },
+            "data_description": {
+              "url": "از HA قابل دسترس، مانند http://esphome:6052.",
+              "show_header": "عنوان، منو و دکمه بارگذاری مجدد.",
+              "panel_path": "/esphome. برای نشانی خودکار خالی بگذارید."
+            }
+          },
+          "access": {
+            "name": "دسترسی",
+            "data": {
+              "access": "دسترسی",
+              "users": "کاربران انتخاب‌شده"
+            },
+            "data_description": {
+              "users": "مدیران نیز باید انتخاب شوند."
+            }
+          },
+          "authentication": {
+            "name": "احراز هویت سرویس",
+            "data": {
+              "auth_type": "احراز هویت",
+              "username": "نام کاربری",
+              "password": "گذرواژه",
+              "bearer_token": "توکن Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic بدون نام کاربری از ورود برنامه استفاده می‌کند. Digest به اطلاعات ورود نیاز دارد.",
+              "password": "در تنظیمات HA بدون رمزگذاری جداگانه ذخیره می‌شود.",
+              "bearer_token": "فقط توکن سرویس؛ بدون رمزگذاری جداگانه ذخیره می‌شود."
+            }
+          },
+          "advanced": {
+            "name": "پیشرفته",
+            "data": {
+              "verify_ssl": "بررسی گواهی TLS",
+              "rewrite": "بازنویسی نشانی‌های برنامه"
+            },
+            "data_description": {
+              "rewrite": "اگر برنامه از مسیر پراکسی پشتیبانی می‌کند، غیرفعال کنید."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "از HTTP(S) بدون اطلاعات ورود، پرس‌وجو یا بخش نشانی استفاده کنید.",
+      "name_required": "نامی وارد کنید.",
+      "select_users": "حداقل یک کاربر فعال انتخاب کنید.",
+      "username_required": "نام کاربری سرویس را وارد کنید.",
+      "invalid_username": "نام کاربری نمی‌تواند دونقطه داشته باشد.",
+      "token_required": "توکن سرویس را وارد کنید.",
+      "invalid_auth_type": "نوع احراز هویت پشتیبانی‌شده را انتخاب کنید.",
+      "invalid_credentials": "اطلاعات ورود نمی‌تواند نویسه خط جدید داشته باشد.",
+      "invalid_panel_path": "با / شروع کنید. از حروف کوچک لاتین، رقم، - یا _ استفاده کنید. مسیرهای Home Assistant رزرو شده‌اند.",
+      "panel_path_in_use": "این مسیر از قبل در حال استفاده است."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "فقط مدیران",
+        "authenticated": "همه کاربران واردشده",
+        "users": "کاربران انتخاب‌شده"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "ورود در برنامه",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "توکن Bearer"
+      }
+    }
+  }
+}

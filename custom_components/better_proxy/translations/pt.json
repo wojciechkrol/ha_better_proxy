@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Apenas serviços de confiança: as suas páginas partilham a origem do Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Serviço e aparência",
+            "data": {
+              "name": "Nome",
+              "url": "URL do serviço",
+              "panel_path": "Endereço",
+              "icon": "Ícone",
+              "show_header": "Mostrar cabeçalho do painel"
+            },
+            "data_description": {
+              "url": "Acessível a partir do HA, por exemplo http://esphome:6052.",
+              "show_header": "Título, menu e botão de recarregamento.",
+              "panel_path": "/esphome. Deixe vazio para um endereço automático."
+            }
+          },
+          "access": {
+            "name": "Acesso",
+            "data": {
+              "access": "Acesso",
+              "users": "Utilizadores selecionados"
+            },
+            "data_description": {
+              "users": "Os administradores também têm de ser selecionados."
+            }
+          },
+          "authentication": {
+            "name": "Autenticação do serviço",
+            "data": {
+              "auth_type": "Autenticação",
+              "username": "Nome de utilizador",
+              "password": "Palavra-passe",
+              "bearer_token": "Token Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic sem utilizador usa o início de sessão da aplicação. Digest exige credenciais.",
+              "password": "Guardada na configuração do HA sem encriptação adicional.",
+              "bearer_token": "Apenas token do serviço; guardado sem encriptação adicional."
+            }
+          },
+          "advanced": {
+            "name": "Avançado",
+            "data": {
+              "verify_ssl": "Verificar certificado TLS",
+              "rewrite": "Reescrever URLs da aplicação"
+            },
+            "data_description": {
+              "rewrite": "Desative se a aplicação já suporta o caminho do proxy."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Use HTTP(S) sem credenciais, parâmetros ou fragmentos.",
+      "name_required": "Introduza um nome.",
+      "select_users": "Selecione pelo menos um utilizador ativo.",
+      "username_required": "Introduza o nome de utilizador do serviço.",
+      "invalid_username": "O nome de utilizador não pode conter dois pontos.",
+      "token_required": "Introduza o token do serviço.",
+      "invalid_auth_type": "Selecione um tipo de autenticação suportado.",
+      "invalid_credentials": "As credenciais não podem conter quebras de linha.",
+      "invalid_panel_path": "Comece com /. Use letras latinas minúsculas sem acentos, dígitos, - ou _. Os caminhos do Home Assistant são reservados.",
+      "panel_path_in_use": "Este caminho já está em uso."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Apenas serviços de confiança: as suas páginas partilham a origem do Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Serviço e aparência",
+            "data": {
+              "name": "Nome",
+              "url": "URL do serviço",
+              "panel_path": "Endereço",
+              "icon": "Ícone",
+              "show_header": "Mostrar cabeçalho do painel"
+            },
+            "data_description": {
+              "url": "Acessível a partir do HA, por exemplo http://esphome:6052.",
+              "show_header": "Título, menu e botão de recarregamento.",
+              "panel_path": "/esphome. Deixe vazio para um endereço automático."
+            }
+          },
+          "access": {
+            "name": "Acesso",
+            "data": {
+              "access": "Acesso",
+              "users": "Utilizadores selecionados"
+            },
+            "data_description": {
+              "users": "Os administradores também têm de ser selecionados."
+            }
+          },
+          "authentication": {
+            "name": "Autenticação do serviço",
+            "data": {
+              "auth_type": "Autenticação",
+              "username": "Nome de utilizador",
+              "password": "Palavra-passe",
+              "bearer_token": "Token Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic sem utilizador usa o início de sessão da aplicação. Digest exige credenciais.",
+              "password": "Guardada na configuração do HA sem encriptação adicional.",
+              "bearer_token": "Apenas token do serviço; guardado sem encriptação adicional."
+            }
+          },
+          "advanced": {
+            "name": "Avançado",
+            "data": {
+              "verify_ssl": "Verificar certificado TLS",
+              "rewrite": "Reescrever URLs da aplicação"
+            },
+            "data_description": {
+              "rewrite": "Desative se a aplicação já suporta o caminho do proxy."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Use HTTP(S) sem credenciais, parâmetros ou fragmentos.",
+      "name_required": "Introduza um nome.",
+      "select_users": "Selecione pelo menos um utilizador ativo.",
+      "username_required": "Introduza o nome de utilizador do serviço.",
+      "invalid_username": "O nome de utilizador não pode conter dois pontos.",
+      "token_required": "Introduza o token do serviço.",
+      "invalid_auth_type": "Selecione um tipo de autenticação suportado.",
+      "invalid_credentials": "As credenciais não podem conter quebras de linha.",
+      "invalid_panel_path": "Comece com /. Use letras latinas minúsculas sem acentos, dígitos, - ou _. Os caminhos do Home Assistant são reservados.",
+      "panel_path_in_use": "Este caminho já está em uso."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Apenas administradores",
+        "authenticated": "Todos os utilizadores com sessão iniciada",
+        "users": "Utilizadores selecionados"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Início de sessão da aplicação",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Token Bearer"
+      }
+    }
+  }
+}

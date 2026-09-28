@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Huduma zinazoaminika pekee: kurasa zake zinatumia asili sawa na Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Huduma na mwonekano",
+            "data": {
+              "name": "Jina",
+              "url": "URL ya huduma",
+              "panel_path": "Anwani",
+              "icon": "Aikoni",
+              "show_header": "Onyesha kichwa cha paneli"
+            },
+            "data_description": {
+              "url": "Inafikika kutoka HA, mfano http://esphome:6052.",
+              "show_header": "Kichwa, menyu na kitufe cha kupakia upya.",
+              "panel_path": "/esphome. Acha wazi kwa anwani ya kiotomatiki."
+            }
+          },
+          "access": {
+            "name": "Ufikiaji",
+            "data": {
+              "access": "Ufikiaji",
+              "users": "Watumiaji waliochaguliwa"
+            },
+            "data_description": {
+              "users": "Wasimamizi pia lazima wachaguliwe."
+            }
+          },
+          "authentication": {
+            "name": "Uthibitishaji wa huduma",
+            "data": {
+              "auth_type": "Uthibitishaji",
+              "username": "Jina la mtumiaji",
+              "password": "Nenosiri",
+              "bearer_token": "Tokeni ya Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic bila jina hutumia kuingia kwa programu. Digest inahitaji taarifa za kuingia.",
+              "password": "Huhifadhiwa katika mipangilio ya HA bila usimbaji fiche tofauti.",
+              "bearer_token": "Tokeni ya huduma pekee; huhifadhiwa bila usimbaji fiche tofauti."
+            }
+          },
+          "advanced": {
+            "name": "Mipangilio ya juu",
+            "data": {
+              "verify_ssl": "Thibitisha cheti cha TLS",
+              "rewrite": "Andika upya URL za programu"
+            },
+            "data_description": {
+              "rewrite": "Zima ikiwa programu tayari inakubali njia ya proksi."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Tumia HTTP(S) bila taarifa za kuingia, hoja au sehemu ya URL.",
+      "name_required": "Weka jina.",
+      "select_users": "Chagua angalau mtumiaji mmoja anayefanya kazi.",
+      "username_required": "Weka jina la mtumiaji wa huduma.",
+      "invalid_username": "Jina la mtumiaji haliwezi kuwa na koloni.",
+      "token_required": "Weka tokeni ya huduma.",
+      "invalid_auth_type": "Chagua aina ya uthibitishaji inayokubaliwa.",
+      "invalid_credentials": "Taarifa za kuingia haziwezi kuwa na alama za mstari mpya.",
+      "invalid_panel_path": "Anza na /. Tumia herufi ndogo za Kilatini, tarakimu, - au _. Njia za Home Assistant zimehifadhiwa.",
+      "panel_path_in_use": "Njia hii tayari inatumika."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Huduma zinazoaminika pekee: kurasa zake zinatumia asili sawa na Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Huduma na mwonekano",
+            "data": {
+              "name": "Jina",
+              "url": "URL ya huduma",
+              "panel_path": "Anwani",
+              "icon": "Aikoni",
+              "show_header": "Onyesha kichwa cha paneli"
+            },
+            "data_description": {
+              "url": "Inafikika kutoka HA, mfano http://esphome:6052.",
+              "show_header": "Kichwa, menyu na kitufe cha kupakia upya.",
+              "panel_path": "/esphome. Acha wazi kwa anwani ya kiotomatiki."
+            }
+          },
+          "access": {
+            "name": "Ufikiaji",
+            "data": {
+              "access": "Ufikiaji",
+              "users": "Watumiaji waliochaguliwa"
+            },
+            "data_description": {
+              "users": "Wasimamizi pia lazima wachaguliwe."
+            }
+          },
+          "authentication": {
+            "name": "Uthibitishaji wa huduma",
+            "data": {
+              "auth_type": "Uthibitishaji",
+              "username": "Jina la mtumiaji",
+              "password": "Nenosiri",
+              "bearer_token": "Tokeni ya Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic bila jina hutumia kuingia kwa programu. Digest inahitaji taarifa za kuingia.",
+              "password": "Huhifadhiwa katika mipangilio ya HA bila usimbaji fiche tofauti.",
+              "bearer_token": "Tokeni ya huduma pekee; huhifadhiwa bila usimbaji fiche tofauti."
+            }
+          },
+          "advanced": {
+            "name": "Mipangilio ya juu",
+            "data": {
+              "verify_ssl": "Thibitisha cheti cha TLS",
+              "rewrite": "Andika upya URL za programu"
+            },
+            "data_description": {
+              "rewrite": "Zima ikiwa programu tayari inakubali njia ya proksi."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Tumia HTTP(S) bila taarifa za kuingia, hoja au sehemu ya URL.",
+      "name_required": "Weka jina.",
+      "select_users": "Chagua angalau mtumiaji mmoja anayefanya kazi.",
+      "username_required": "Weka jina la mtumiaji wa huduma.",
+      "invalid_username": "Jina la mtumiaji haliwezi kuwa na koloni.",
+      "token_required": "Weka tokeni ya huduma.",
+      "invalid_auth_type": "Chagua aina ya uthibitishaji inayokubaliwa.",
+      "invalid_credentials": "Taarifa za kuingia haziwezi kuwa na alama za mstari mpya.",
+      "invalid_panel_path": "Anza na /. Tumia herufi ndogo za Kilatini, tarakimu, - au _. Njia za Home Assistant zimehifadhiwa.",
+      "panel_path_in_use": "Njia hii tayari inatumika."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Wasimamizi pekee",
+        "authenticated": "Watumiaji wote walioingia",
+        "users": "Watumiaji waliochaguliwa"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Kuingia kwenye programu",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Tokeni ya Bearer"
+      }
+    }
+  }
+}

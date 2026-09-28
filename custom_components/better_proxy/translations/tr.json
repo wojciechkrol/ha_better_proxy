@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Yalnızca güvenilir hizmetler: sayfaları Home Assistant ile aynı kökeni paylaşır.",
+        "sections": {
+          "service": {
+            "name": "Hizmet ve görünüm",
+            "data": {
+              "name": "Ad",
+              "url": "Hizmet URL’si",
+              "panel_path": "Adres",
+              "icon": "Simge",
+              "show_header": "Panel başlığını göster"
+            },
+            "data_description": {
+              "url": "HA’dan erişilebilir, ör. http://esphome:6052.",
+              "show_header": "Başlık, menü ve yeniden yükleme düğmesi.",
+              "panel_path": "/esphome. Otomatik adres için boş bırakın."
+            }
+          },
+          "access": {
+            "name": "Erişim",
+            "data": {
+              "access": "Erişim",
+              "users": "Seçili kullanıcılar"
+            },
+            "data_description": {
+              "users": "Yöneticiler de seçilmelidir."
+            }
+          },
+          "authentication": {
+            "name": "Hizmet kimlik doğrulaması",
+            "data": {
+              "auth_type": "Kimlik doğrulama",
+              "username": "Kullanıcı adı",
+              "password": "Parola",
+              "bearer_token": "Bearer belirteci"
+            },
+            "data_description": {
+              "auth_type": "Kullanıcı adı olmadan Basic, uygulamanın girişini kullanır. Digest kimlik bilgileri gerektirir.",
+              "password": "HA yapılandırmasında ayrı şifreleme olmadan saklanır.",
+              "bearer_token": "Yalnızca hizmet belirteci; ayrı şifreleme olmadan saklanır."
+            }
+          },
+          "advanced": {
+            "name": "Gelişmiş",
+            "data": {
+              "verify_ssl": "TLS sertifikasını doğrula",
+              "rewrite": "Uygulama URL’lerini yeniden yaz"
+            },
+            "data_description": {
+              "rewrite": "Uygulama proxy yolunu zaten destekliyorsa kapatın."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Kimlik bilgisi, sorgu veya parça içermeyen HTTP(S) kullanın.",
+      "name_required": "Bir ad girin.",
+      "select_users": "En az bir etkin kullanıcı seçin.",
+      "username_required": "Hizmetin kullanıcı adını girin.",
+      "invalid_username": "Kullanıcı adı iki nokta içeremez.",
+      "token_required": "Hizmet belirtecini girin.",
+      "invalid_auth_type": "Desteklenen bir kimlik doğrulama türü seçin.",
+      "invalid_credentials": "Kimlik bilgileri satır sonu içeremez.",
+      "invalid_panel_path": "/ ile başlayın. Küçük Latin harfleri, rakamlar, - veya _ kullanın. Home Assistant yolları ayrılmıştır.",
+      "panel_path_in_use": "Bu yol zaten kullanılıyor."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Yalnızca güvenilir hizmetler: sayfaları Home Assistant ile aynı kökeni paylaşır.",
+        "sections": {
+          "service": {
+            "name": "Hizmet ve görünüm",
+            "data": {
+              "name": "Ad",
+              "url": "Hizmet URL’si",
+              "panel_path": "Adres",
+              "icon": "Simge",
+              "show_header": "Panel başlığını göster"
+            },
+            "data_description": {
+              "url": "HA’dan erişilebilir, ör. http://esphome:6052.",
+              "show_header": "Başlık, menü ve yeniden yükleme düğmesi.",
+              "panel_path": "/esphome. Otomatik adres için boş bırakın."
+            }
+          },
+          "access": {
+            "name": "Erişim",
+            "data": {
+              "access": "Erişim",
+              "users": "Seçili kullanıcılar"
+            },
+            "data_description": {
+              "users": "Yöneticiler de seçilmelidir."
+            }
+          },
+          "authentication": {
+            "name": "Hizmet kimlik doğrulaması",
+            "data": {
+              "auth_type": "Kimlik doğrulama",
+              "username": "Kullanıcı adı",
+              "password": "Parola",
+              "bearer_token": "Bearer belirteci"
+            },
+            "data_description": {
+              "auth_type": "Kullanıcı adı olmadan Basic, uygulamanın girişini kullanır. Digest kimlik bilgileri gerektirir.",
+              "password": "HA yapılandırmasında ayrı şifreleme olmadan saklanır.",
+              "bearer_token": "Yalnızca hizmet belirteci; ayrı şifreleme olmadan saklanır."
+            }
+          },
+          "advanced": {
+            "name": "Gelişmiş",
+            "data": {
+              "verify_ssl": "TLS sertifikasını doğrula",
+              "rewrite": "Uygulama URL’lerini yeniden yaz"
+            },
+            "data_description": {
+              "rewrite": "Uygulama proxy yolunu zaten destekliyorsa kapatın."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Kimlik bilgisi, sorgu veya parça içermeyen HTTP(S) kullanın.",
+      "name_required": "Bir ad girin.",
+      "select_users": "En az bir etkin kullanıcı seçin.",
+      "username_required": "Hizmetin kullanıcı adını girin.",
+      "invalid_username": "Kullanıcı adı iki nokta içeremez.",
+      "token_required": "Hizmet belirtecini girin.",
+      "invalid_auth_type": "Desteklenen bir kimlik doğrulama türü seçin.",
+      "invalid_credentials": "Kimlik bilgileri satır sonu içeremez.",
+      "invalid_panel_path": "/ ile başlayın. Küçük Latin harfleri, rakamlar, - veya _ kullanın. Home Assistant yolları ayrılmıştır.",
+      "panel_path_in_use": "Bu yol zaten kullanılıyor."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Yalnızca yöneticiler",
+        "authenticated": "Giriş yapmış tüm kullanıcılar",
+        "users": "Seçili kullanıcılar"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Uygulama girişi",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Bearer belirteci"
+      }
+    }
+  }
+}

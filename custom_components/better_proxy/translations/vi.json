@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Chỉ dùng dịch vụ đáng tin cậy: các trang của chúng dùng chung nguồn với Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Dịch vụ và giao diện",
+            "data": {
+              "name": "Tên",
+              "url": "URL dịch vụ",
+              "panel_path": "Địa chỉ",
+              "icon": "Biểu tượng",
+              "show_header": "Hiện tiêu đề bảng"
+            },
+            "data_description": {
+              "url": "HA phải truy cập được, ví dụ http://esphome:6052.",
+              "show_header": "Tiêu đề, menu và nút tải lại.",
+              "panel_path": "/esphome. Để trống để dùng địa chỉ tự động."
+            }
+          },
+          "access": {
+            "name": "Quyền truy cập",
+            "data": {
+              "access": "Quyền truy cập",
+              "users": "Người dùng được chọn"
+            },
+            "data_description": {
+              "users": "Quản trị viên cũng phải được chọn."
+            }
+          },
+          "authentication": {
+            "name": "Xác thực dịch vụ",
+            "data": {
+              "auth_type": "Xác thực",
+              "username": "Tên người dùng",
+              "password": "Mật khẩu",
+              "bearer_token": "Mã Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic không có tên người dùng dùng đăng nhập của ứng dụng. Digest cần thông tin đăng nhập.",
+              "password": "Lưu trong cấu hình HA, không mã hóa riêng.",
+              "bearer_token": "Chỉ mã của dịch vụ; lưu mà không mã hóa riêng."
+            }
+          },
+          "advanced": {
+            "name": "Nâng cao",
+            "data": {
+              "verify_ssl": "Kiểm tra chứng chỉ TLS",
+              "rewrite": "Viết lại URL ứng dụng"
+            },
+            "data_description": {
+              "rewrite": "Tắt nếu ứng dụng đã hỗ trợ đường dẫn proxy."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Dùng HTTP(S) không có thông tin đăng nhập, truy vấn hoặc phân đoạn.",
+      "name_required": "Nhập tên.",
+      "select_users": "Chọn ít nhất một người dùng đang hoạt động.",
+      "username_required": "Nhập tên người dùng của dịch vụ.",
+      "invalid_username": "Tên người dùng không được chứa dấu hai chấm.",
+      "token_required": "Nhập mã của dịch vụ.",
+      "invalid_auth_type": "Chọn kiểu xác thực được hỗ trợ.",
+      "invalid_credentials": "Thông tin đăng nhập không được chứa ký tự xuống dòng.",
+      "invalid_panel_path": "Bắt đầu bằng /. Dùng chữ Latin thường không dấu, chữ số, - hoặc _. Đường dẫn của Home Assistant được dành riêng.",
+      "panel_path_in_use": "Đường dẫn này đã được sử dụng."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Chỉ dùng dịch vụ đáng tin cậy: các trang của chúng dùng chung nguồn với Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Dịch vụ và giao diện",
+            "data": {
+              "name": "Tên",
+              "url": "URL dịch vụ",
+              "panel_path": "Địa chỉ",
+              "icon": "Biểu tượng",
+              "show_header": "Hiện tiêu đề bảng"
+            },
+            "data_description": {
+              "url": "HA phải truy cập được, ví dụ http://esphome:6052.",
+              "show_header": "Tiêu đề, menu và nút tải lại.",
+              "panel_path": "/esphome. Để trống để dùng địa chỉ tự động."
+            }
+          },
+          "access": {
+            "name": "Quyền truy cập",
+            "data": {
+              "access": "Quyền truy cập",
+              "users": "Người dùng được chọn"
+            },
+            "data_description": {
+              "users": "Quản trị viên cũng phải được chọn."
+            }
+          },
+          "authentication": {
+            "name": "Xác thực dịch vụ",
+            "data": {
+              "auth_type": "Xác thực",
+              "username": "Tên người dùng",
+              "password": "Mật khẩu",
+              "bearer_token": "Mã Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic không có tên người dùng dùng đăng nhập của ứng dụng. Digest cần thông tin đăng nhập.",
+              "password": "Lưu trong cấu hình HA, không mã hóa riêng.",
+              "bearer_token": "Chỉ mã của dịch vụ; lưu mà không mã hóa riêng."
+            }
+          },
+          "advanced": {
+            "name": "Nâng cao",
+            "data": {
+              "verify_ssl": "Kiểm tra chứng chỉ TLS",
+              "rewrite": "Viết lại URL ứng dụng"
+            },
+            "data_description": {
+              "rewrite": "Tắt nếu ứng dụng đã hỗ trợ đường dẫn proxy."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Dùng HTTP(S) không có thông tin đăng nhập, truy vấn hoặc phân đoạn.",
+      "name_required": "Nhập tên.",
+      "select_users": "Chọn ít nhất một người dùng đang hoạt động.",
+      "username_required": "Nhập tên người dùng của dịch vụ.",
+      "invalid_username": "Tên người dùng không được chứa dấu hai chấm.",
+      "token_required": "Nhập mã của dịch vụ.",
+      "invalid_auth_type": "Chọn kiểu xác thực được hỗ trợ.",
+      "invalid_credentials": "Thông tin đăng nhập không được chứa ký tự xuống dòng.",
+      "invalid_panel_path": "Bắt đầu bằng /. Dùng chữ Latin thường không dấu, chữ số, - hoặc _. Đường dẫn của Home Assistant được dành riêng.",
+      "panel_path_in_use": "Đường dẫn này đã được sử dụng."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Chỉ quản trị viên",
+        "authenticated": "Tất cả người dùng đã đăng nhập",
+        "users": "Người dùng được chọn"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Đăng nhập ứng dụng",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Mã Bearer"
+      }
+    }
+  }
+}

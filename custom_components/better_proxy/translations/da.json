@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Kun betroede tjenester: deres sider deler oprindelse med Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Tjeneste og udseende",
+            "data": {
+              "name": "Navn",
+              "url": "Tjenestens URL",
+              "panel_path": "Adresse",
+              "icon": "Ikon",
+              "show_header": "Vis paneloverskrift"
+            },
+            "data_description": {
+              "url": "Tilgængelig fra HA, f.eks. http://esphome:6052.",
+              "show_header": "Titel, menu og genindlæsningsknap.",
+              "panel_path": "/esphome. Lad feltet stå tomt for en automatisk adresse."
+            }
+          },
+          "access": {
+            "name": "Adgang",
+            "data": {
+              "access": "Adgang",
+              "users": "Valgte brugere"
+            },
+            "data_description": {
+              "users": "Administratorer skal også vælges."
+            }
+          },
+          "authentication": {
+            "name": "Tjenestelogin",
+            "data": {
+              "auth_type": "Godkendelse",
+              "username": "Brugernavn",
+              "password": "Adgangskode",
+              "bearer_token": "Bearer-token"
+            },
+            "data_description": {
+              "auth_type": "Basic uden brugernavn bruger appens login. Digest kræver loginoplysninger.",
+              "password": "Gemmes i HA-konfigurationen uden særskilt kryptering.",
+              "bearer_token": "Kun tjenestens token; gemmes uden særskilt kryptering."
+            }
+          },
+          "advanced": {
+            "name": "Avanceret",
+            "data": {
+              "verify_ssl": "Kontrollér TLS-certifikat",
+              "rewrite": "Omskriv appens URL’er"
+            },
+            "data_description": {
+              "rewrite": "Slå fra, hvis appen allerede understøtter proxystien."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Brug HTTP(S) uden loginoplysninger, forespørgsel eller fragment.",
+      "name_required": "Indtast et navn.",
+      "select_users": "Vælg mindst én aktiv bruger.",
+      "username_required": "Indtast tjenestens brugernavn.",
+      "invalid_username": "Brugernavnet må ikke indeholde kolon.",
+      "token_required": "Indtast tjenestens token.",
+      "invalid_auth_type": "Vælg en understøttet godkendelsestype.",
+      "invalid_credentials": "Loginoplysninger må ikke indeholde linjeskift.",
+      "invalid_panel_path": "Start med /. Brug små latinske bogstaver, tal, - eller _. Home Assistant-stier er reserverede.",
+      "panel_path_in_use": "Denne sti er allerede i brug."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Kun betroede tjenester: deres sider deler oprindelse med Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Tjeneste og udseende",
+            "data": {
+              "name": "Navn",
+              "url": "Tjenestens URL",
+              "panel_path": "Adresse",
+              "icon": "Ikon",
+              "show_header": "Vis paneloverskrift"
+            },
+            "data_description": {
+              "url": "Tilgængelig fra HA, f.eks. http://esphome:6052.",
+              "show_header": "Titel, menu og genindlæsningsknap.",
+              "panel_path": "/esphome. Lad feltet stå tomt for en automatisk adresse."
+            }
+          },
+          "access": {
+            "name": "Adgang",
+            "data": {
+              "access": "Adgang",
+              "users": "Valgte brugere"
+            },
+            "data_description": {
+              "users": "Administratorer skal også vælges."
+            }
+          },
+          "authentication": {
+            "name": "Tjenestelogin",
+            "data": {
+              "auth_type": "Godkendelse",
+              "username": "Brugernavn",
+              "password": "Adgangskode",
+              "bearer_token": "Bearer-token"
+            },
+            "data_description": {
+              "auth_type": "Basic uden brugernavn bruger appens login. Digest kræver loginoplysninger.",
+              "password": "Gemmes i HA-konfigurationen uden særskilt kryptering.",
+              "bearer_token": "Kun tjenestens token; gemmes uden særskilt kryptering."
+            }
+          },
+          "advanced": {
+            "name": "Avanceret",
+            "data": {
+              "verify_ssl": "Kontrollér TLS-certifikat",
+              "rewrite": "Omskriv appens URL’er"
+            },
+            "data_description": {
+              "rewrite": "Slå fra, hvis appen allerede understøtter proxystien."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Brug HTTP(S) uden loginoplysninger, forespørgsel eller fragment.",
+      "name_required": "Indtast et navn.",
+      "select_users": "Vælg mindst én aktiv bruger.",
+      "username_required": "Indtast tjenestens brugernavn.",
+      "invalid_username": "Brugernavnet må ikke indeholde kolon.",
+      "token_required": "Indtast tjenestens token.",
+      "invalid_auth_type": "Vælg en understøttet godkendelsestype.",
+      "invalid_credentials": "Loginoplysninger må ikke indeholde linjeskift.",
+      "invalid_panel_path": "Start med /. Brug små latinske bogstaver, tal, - eller _. Home Assistant-stier er reserverede.",
+      "panel_path_in_use": "Denne sti er allerede i brug."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Kun administratorer",
+        "authenticated": "Alle brugere, der er logget ind",
+        "users": "Valgte brugere"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Appens login",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Bearer-token"
+      }
+    }
+  }
+}

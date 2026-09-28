@@ -1,0 +1,9 @@
+homeassistant:
+  name: Better Proxy Test
+  latitude: 52.23
+  longitude: 21.01
+  elevation: 100
+  unit_system: metric
+  time_zone: Europe/Warsaw
+frontend:
+config:

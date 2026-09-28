@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "الخدمات الموثوقة فقط: تشترك صفحاتها في أصل Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "الخدمة والمظهر",
+            "data": {
+              "name": "الاسم",
+              "url": "عنوان الخدمة",
+              "panel_path": "العنوان",
+              "icon": "الأيقونة",
+              "show_header": "عرض رأس اللوحة"
+            },
+            "data_description": {
+              "url": "يمكن الوصول إليه من HA، مثل http://esphome:6052.",
+              "show_header": "العنوان والقائمة وزر إعادة التحميل.",
+              "panel_path": "/esphome. اتركه فارغًا لعنوان تلقائي."
+            }
+          },
+          "access": {
+            "name": "الوصول",
+            "data": {
+              "access": "الوصول",
+              "users": "المستخدمون المحددون"
+            },
+            "data_description": {
+              "users": "يجب تحديد المسؤولين أيضًا."
+            }
+          },
+          "authentication": {
+            "name": "مصادقة الخدمة",
+            "data": {
+              "auth_type": "المصادقة",
+              "username": "اسم المستخدم",
+              "password": "كلمة المرور",
+              "bearer_token": "رمز Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic دون اسم مستخدم يستخدم تسجيل دخول التطبيق. يتطلب Digest بيانات اعتماد.",
+              "password": "تُحفظ في إعدادات HA دون تشفير منفصل.",
+              "bearer_token": "رمز الخدمة فقط؛ يُحفظ دون تشفير منفصل."
+            }
+          },
+          "advanced": {
+            "name": "إعدادات متقدمة",
+            "data": {
+              "verify_ssl": "التحقق من شهادة TLS",
+              "rewrite": "إعادة كتابة عناوين التطبيق"
+            },
+            "data_description": {
+              "rewrite": "عطّلها إذا كان التطبيق يدعم مسار الوكيل بالفعل."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "استخدم HTTP(S) دون بيانات اعتماد أو استعلام أو جزء.",
+      "name_required": "أدخل اسمًا.",
+      "select_users": "حدد مستخدمًا نشطًا واحدًا على الأقل.",
+      "username_required": "أدخل اسم مستخدم الخدمة.",
+      "invalid_username": "لا يمكن أن يحتوي اسم المستخدم على نقطتين رأسيتين.",
+      "token_required": "أدخل رمز الخدمة.",
+      "invalid_auth_type": "اختر نوع مصادقة مدعومًا.",
+      "invalid_credentials": "لا يمكن أن تحتوي بيانات الاعتماد على فواصل أسطر.",
+      "invalid_panel_path": "ابدأ بـ /. استخدم أحرفًا لاتينية صغيرة أو أرقامًا أو - أو _. مسارات Home Assistant محجوزة.",
+      "panel_path_in_use": "هذا المسار مستخدم بالفعل."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "الخدمات الموثوقة فقط: تشترك صفحاتها في أصل Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "الخدمة والمظهر",
+            "data": {
+              "name": "الاسم",
+              "url": "عنوان الخدمة",
+              "panel_path": "العنوان",
+              "icon": "الأيقونة",
+              "show_header": "عرض رأس اللوحة"
+            },
+            "data_description": {
+              "url": "يمكن الوصول إليه من HA، مثل http://esphome:6052.",
+              "show_header": "العنوان والقائمة وزر إعادة التحميل.",
+              "panel_path": "/esphome. اتركه فارغًا لعنوان تلقائي."
+            }
+          },
+          "access": {
+            "name": "الوصول",
+            "data": {
+              "access": "الوصول",
+              "users": "المستخدمون المحددون"
+            },
+            "data_description": {
+              "users": "يجب تحديد المسؤولين أيضًا."
+            }
+          },
+          "authentication": {
+            "name": "مصادقة الخدمة",
+            "data": {
+              "auth_type": "المصادقة",
+              "username": "اسم المستخدم",
+              "password": "كلمة المرور",
+              "bearer_token": "رمز Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic دون اسم مستخدم يستخدم تسجيل دخول التطبيق. يتطلب Digest بيانات اعتماد.",
+              "password": "تُحفظ في إعدادات HA دون تشفير منفصل.",
+              "bearer_token": "رمز الخدمة فقط؛ يُحفظ دون تشفير منفصل."
+            }
+          },
+          "advanced": {
+            "name": "إعدادات متقدمة",
+            "data": {
+              "verify_ssl": "التحقق من شهادة TLS",
+              "rewrite": "إعادة كتابة عناوين التطبيق"
+            },
+            "data_description": {
+              "rewrite": "عطّلها إذا كان التطبيق يدعم مسار الوكيل بالفعل."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "استخدم HTTP(S) دون بيانات اعتماد أو استعلام أو جزء.",
+      "name_required": "أدخل اسمًا.",
+      "select_users": "حدد مستخدمًا نشطًا واحدًا على الأقل.",
+      "username_required": "أدخل اسم مستخدم الخدمة.",
+      "invalid_username": "لا يمكن أن يحتوي اسم المستخدم على نقطتين رأسيتين.",
+      "token_required": "أدخل رمز الخدمة.",
+      "invalid_auth_type": "اختر نوع مصادقة مدعومًا.",
+      "invalid_credentials": "لا يمكن أن تحتوي بيانات الاعتماد على فواصل أسطر.",
+      "invalid_panel_path": "ابدأ بـ /. استخدم أحرفًا لاتينية صغيرة أو أرقامًا أو - أو _. مسارات Home Assistant محجوزة.",
+      "panel_path_in_use": "هذا المسار مستخدم بالفعل."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "المسؤولون فقط",
+        "authenticated": "جميع المستخدمين المسجلين",
+        "users": "المستخدمون المحددون"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "تسجيل دخول التطبيق",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "رمز Bearer"
+      }
+    }
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Bare betrodde tjenester: sidene deres deler opprinnelse med Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Tjeneste og utseende",
+            "data": {
+              "name": "Navn",
+              "url": "Tjenestens URL",
+              "panel_path": "Adresse",
+              "icon": "Ikon",
+              "show_header": "Vis paneloverskrift"
+            },
+            "data_description": {
+              "url": "Tilgjengelig fra HA, f.eks. http://esphome:6052.",
+              "show_header": "Tittel, meny og knapp for å laste på nytt.",
+              "panel_path": "/esphome. La feltet være tomt for en automatisk adresse."
+            }
+          },
+          "access": {
+            "name": "Tilgang",
+            "data": {
+              "access": "Tilgang",
+              "users": "Valgte brukere"
+            },
+            "data_description": {
+              "users": "Administratorer må også velges."
+            }
+          },
+          "authentication": {
+            "name": "Tjenesteinnlogging",
+            "data": {
+              "auth_type": "Autentisering",
+              "username": "Brukernavn",
+              "password": "Passord",
+              "bearer_token": "Bearer-token"
+            },
+            "data_description": {
+              "auth_type": "Basic uten brukernavn bruker appens innlogging. Digest krever påloggingsopplysninger.",
+              "password": "Lagres i HA-konfigurasjonen uten separat kryptering.",
+              "bearer_token": "Bare tjenestens token; lagres uten separat kryptering."
+            }
+          },
+          "advanced": {
+            "name": "Avansert",
+            "data": {
+              "verify_ssl": "Kontroller TLS-sertifikat",
+              "rewrite": "Skriv om appens URL-er"
+            },
+            "data_description": {
+              "rewrite": "Slå av hvis appen allerede støtter proxybanen."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Bruk HTTP(S) uten påloggingsopplysninger, spørring eller fragment.",
+      "name_required": "Skriv inn et navn.",
+      "select_users": "Velg minst én aktiv bruker.",
+      "username_required": "Skriv inn tjenestens brukernavn.",
+      "invalid_username": "Brukernavnet kan ikke inneholde kolon.",
+      "token_required": "Skriv inn tjenestens token.",
+      "invalid_auth_type": "Velg en støttet autentiseringstype.",
+      "invalid_credentials": "Påloggingsopplysninger kan ikke inneholde linjeskift.",
+      "invalid_panel_path": "Start med /. Bruk små latinske bokstaver, tall, - eller _. Home Assistant-stier er reservert.",
+      "panel_path_in_use": "Denne stien er allerede i bruk."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Bare betrodde tjenester: sidene deres deler opprinnelse med Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Tjeneste og utseende",
+            "data": {
+              "name": "Navn",
+              "url": "Tjenestens URL",
+              "panel_path": "Adresse",
+              "icon": "Ikon",
+              "show_header": "Vis paneloverskrift"
+            },
+            "data_description": {
+              "url": "Tilgjengelig fra HA, f.eks. http://esphome:6052.",
+              "show_header": "Tittel, meny og knapp for å laste på nytt.",
+              "panel_path": "/esphome. La feltet være tomt for en automatisk adresse."
+            }
+          },
+          "access": {
+            "name": "Tilgang",
+            "data": {
+              "access": "Tilgang",
+              "users": "Valgte brukere"
+            },
+            "data_description": {
+              "users": "Administratorer må også velges."
+            }
+          },
+          "authentication": {
+            "name": "Tjenesteinnlogging",
+            "data": {
+              "auth_type": "Autentisering",
+              "username": "Brukernavn",
+              "password": "Passord",
+              "bearer_token": "Bearer-token"
+            },
+            "data_description": {
+              "auth_type": "Basic uten brukernavn bruker appens innlogging. Digest krever påloggingsopplysninger.",
+              "password": "Lagres i HA-konfigurasjonen uten separat kryptering.",
+              "bearer_token": "Bare tjenestens token; lagres uten separat kryptering."
+            }
+          },
+          "advanced": {
+            "name": "Avansert",
+            "data": {
+              "verify_ssl": "Kontroller TLS-sertifikat",
+              "rewrite": "Skriv om appens URL-er"
+            },
+            "data_description": {
+              "rewrite": "Slå av hvis appen allerede støtter proxybanen."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Bruk HTTP(S) uten påloggingsopplysninger, spørring eller fragment.",
+      "name_required": "Skriv inn et navn.",
+      "select_users": "Velg minst én aktiv bruker.",
+      "username_required": "Skriv inn tjenestens brukernavn.",
+      "invalid_username": "Brukernavnet kan ikke inneholde kolon.",
+      "token_required": "Skriv inn tjenestens token.",
+      "invalid_auth_type": "Velg en støttet autentiseringstype.",
+      "invalid_credentials": "Påloggingsopplysninger kan ikke inneholde linjeskift.",
+      "invalid_panel_path": "Start med /. Bruk små latinske bokstaver, tall, - eller _. Home Assistant-stier er reservert.",
+      "panel_path_in_use": "Denne stien er allerede i bruk."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Bare administratorer",
+        "authenticated": "Alle innloggede brukere",
+        "users": "Valgte brukere"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Appens innlogging",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Bearer-token"
+      }
+    }
+  }
+}

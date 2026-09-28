@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "Perkhidmatan dipercayai sahaja: halamannya berkongsi asal dengan Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Perkhidmatan dan rupa",
+            "data": {
+              "name": "Nama",
+              "url": "URL perkhidmatan",
+              "panel_path": "Alamat",
+              "icon": "Ikon",
+              "show_header": "Paparkan pengepala panel"
+            },
+            "data_description": {
+              "url": "Boleh dicapai dari HA, cth. http://esphome:6052.",
+              "show_header": "Tajuk, menu dan butang muat semula.",
+              "panel_path": "/esphome. Biarkan kosong untuk alamat automatik."
+            }
+          },
+          "access": {
+            "name": "Akses",
+            "data": {
+              "access": "Akses",
+              "users": "Pengguna terpilih"
+            },
+            "data_description": {
+              "users": "Pentadbir juga mesti dipilih."
+            }
+          },
+          "authentication": {
+            "name": "Pengesahan perkhidmatan",
+            "data": {
+              "auth_type": "Pengesahan",
+              "username": "Nama pengguna",
+              "password": "Kata laluan",
+              "bearer_token": "Token Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic tanpa nama pengguna menggunakan log masuk aplikasi. Digest memerlukan kelayakan.",
+              "password": "Disimpan dalam konfigurasi HA tanpa penyulitan berasingan.",
+              "bearer_token": "Token perkhidmatan sahaja; disimpan tanpa penyulitan berasingan."
+            }
+          },
+          "advanced": {
+            "name": "Lanjutan",
+            "data": {
+              "verify_ssl": "Sahkan sijil TLS",
+              "rewrite": "Tulis semula URL aplikasi"
+            },
+            "data_description": {
+              "rewrite": "Matikan jika aplikasi sudah menyokong laluan proksi."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Gunakan HTTP(S) tanpa kelayakan, pertanyaan atau fragmen.",
+      "name_required": "Masukkan nama.",
+      "select_users": "Pilih sekurang-kurangnya seorang pengguna aktif.",
+      "username_required": "Masukkan nama pengguna perkhidmatan.",
+      "invalid_username": "Nama pengguna tidak boleh mengandungi titik bertindih.",
+      "token_required": "Masukkan token perkhidmatan.",
+      "invalid_auth_type": "Pilih jenis pengesahan yang disokong.",
+      "invalid_credentials": "Kelayakan tidak boleh mengandungi pemisah baris.",
+      "invalid_panel_path": "Mulakan dengan /. Gunakan huruf Latin kecil, digit, - atau _. Laluan Home Assistant dikhaskan.",
+      "panel_path_in_use": "Laluan ini sudah digunakan."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "Perkhidmatan dipercayai sahaja: halamannya berkongsi asal dengan Home Assistant.",
+        "sections": {
+          "service": {
+            "name": "Perkhidmatan dan rupa",
+            "data": {
+              "name": "Nama",
+              "url": "URL perkhidmatan",
+              "panel_path": "Alamat",
+              "icon": "Ikon",
+              "show_header": "Paparkan pengepala panel"
+            },
+            "data_description": {
+              "url": "Boleh dicapai dari HA, cth. http://esphome:6052.",
+              "show_header": "Tajuk, menu dan butang muat semula.",
+              "panel_path": "/esphome. Biarkan kosong untuk alamat automatik."
+            }
+          },
+          "access": {
+            "name": "Akses",
+            "data": {
+              "access": "Akses",
+              "users": "Pengguna terpilih"
+            },
+            "data_description": {
+              "users": "Pentadbir juga mesti dipilih."
+            }
+          },
+          "authentication": {
+            "name": "Pengesahan perkhidmatan",
+            "data": {
+              "auth_type": "Pengesahan",
+              "username": "Nama pengguna",
+              "password": "Kata laluan",
+              "bearer_token": "Token Bearer"
+            },
+            "data_description": {
+              "auth_type": "Basic tanpa nama pengguna menggunakan log masuk aplikasi. Digest memerlukan kelayakan.",
+              "password": "Disimpan dalam konfigurasi HA tanpa penyulitan berasingan.",
+              "bearer_token": "Token perkhidmatan sahaja; disimpan tanpa penyulitan berasingan."
+            }
+          },
+          "advanced": {
+            "name": "Lanjutan",
+            "data": {
+              "verify_ssl": "Sahkan sijil TLS",
+              "rewrite": "Tulis semula URL aplikasi"
+            },
+            "data_description": {
+              "rewrite": "Matikan jika aplikasi sudah menyokong laluan proksi."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Gunakan HTTP(S) tanpa kelayakan, pertanyaan atau fragmen.",
+      "name_required": "Masukkan nama.",
+      "select_users": "Pilih sekurang-kurangnya seorang pengguna aktif.",
+      "username_required": "Masukkan nama pengguna perkhidmatan.",
+      "invalid_username": "Nama pengguna tidak boleh mengandungi titik bertindih.",
+      "token_required": "Masukkan token perkhidmatan.",
+      "invalid_auth_type": "Pilih jenis pengesahan yang disokong.",
+      "invalid_credentials": "Kelayakan tidak boleh mengandungi pemisah baris.",
+      "invalid_panel_path": "Mulakan dengan /. Gunakan huruf Latin kecil, digit, - atau _. Laluan Home Assistant dikhaskan.",
+      "panel_path_in_use": "Laluan ini sudah digunakan."
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "Pentadbir sahaja",
+        "authenticated": "Semua pengguna yang log masuk",
+        "users": "Pengguna terpilih"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "Log masuk aplikasi",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Token Bearer"
+      }
+    }
+  }
+}

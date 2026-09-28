@@ -1,0 +1,162 @@
+{
+  "title": "Better Proxy",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Better Proxy",
+        "description": "صرف قابلِ اعتماد خدمات: ان کے صفحات Home Assistant کا اوریجن استعمال کرتے ہیں۔",
+        "sections": {
+          "service": {
+            "name": "خدمت اور ظاہری شکل",
+            "data": {
+              "name": "نام",
+              "url": "خدمت کا URL",
+              "panel_path": "پتہ",
+              "icon": "آئیکن",
+              "show_header": "پینل کی سرخی دکھائیں"
+            },
+            "data_description": {
+              "url": "HA سے قابلِ رسائی، مثلاً http://esphome:6052.",
+              "show_header": "عنوان، مینو اور دوبارہ لوڈ کا بٹن۔",
+              "panel_path": "/esphome. خودکار پتے کے لیے خالی چھوڑیں۔"
+            }
+          },
+          "access": {
+            "name": "رسائی",
+            "data": {
+              "access": "رسائی",
+              "users": "منتخب صارفین"
+            },
+            "data_description": {
+              "users": "منتظمین کو بھی منتخب کرنا ضروری ہے۔"
+            }
+          },
+          "authentication": {
+            "name": "خدمت کی توثیق",
+            "data": {
+              "auth_type": "توثیق",
+              "username": "صارف نام",
+              "password": "پاس ورڈ",
+              "bearer_token": "Bearer ٹوکن"
+            },
+            "data_description": {
+              "auth_type": "صارف نام کے بغیر Basic ایپ کا لاگ اِن استعمال کرتا ہے۔ Digest کو لاگ اِن معلومات درکار ہیں۔",
+              "password": "HA کی ترتیبات میں الگ خفیہ کاری کے بغیر محفوظ ہوتا ہے۔",
+              "bearer_token": "صرف خدمت کا ٹوکن؛ الگ خفیہ کاری کے بغیر محفوظ ہوتا ہے۔"
+            }
+          },
+          "advanced": {
+            "name": "اعلیٰ ترتیبات",
+            "data": {
+              "verify_ssl": "TLS سرٹیفکیٹ کی جانچ",
+              "rewrite": "ایپ کے URL دوبارہ لکھیں"
+            },
+            "data_description": {
+              "rewrite": "اگر ایپ پہلے ہی پراکسی پاتھ کی معاونت کرتی ہے تو بند کریں۔"
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "لاگ اِن معلومات، کوئری یا فریگمنٹ کے بغیر HTTP(S) استعمال کریں۔",
+      "name_required": "نام درج کریں۔",
+      "select_users": "کم از کم ایک فعال صارف منتخب کریں۔",
+      "username_required": "خدمت کا صارف نام درج کریں۔",
+      "invalid_username": "صارف نام میں کولن نہیں ہو سکتا۔",
+      "token_required": "خدمت کا ٹوکن درج کریں۔",
+      "invalid_auth_type": "معاونت یافتہ توثیق کی قسم منتخب کریں۔",
+      "invalid_credentials": "لاگ اِن معلومات میں نئی سطر کے حروف نہیں ہو سکتے۔",
+      "invalid_panel_path": "/ سے شروع کریں۔ چھوٹے لاطینی حروف، ہندسے، - یا _ استعمال کریں۔ Home Assistant کے راستے مخصوص ہیں۔",
+      "panel_path_in_use": "یہ راستہ پہلے سے استعمال میں ہے۔"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Better Proxy",
+        "description": "صرف قابلِ اعتماد خدمات: ان کے صفحات Home Assistant کا اوریجن استعمال کرتے ہیں۔",
+        "sections": {
+          "service": {
+            "name": "خدمت اور ظاہری شکل",
+            "data": {
+              "name": "نام",
+              "url": "خدمت کا URL",
+              "panel_path": "پتہ",
+              "icon": "آئیکن",
+              "show_header": "پینل کی سرخی دکھائیں"
+            },
+            "data_description": {
+              "url": "HA سے قابلِ رسائی، مثلاً http://esphome:6052.",
+              "show_header": "عنوان، مینو اور دوبارہ لوڈ کا بٹن۔",
+              "panel_path": "/esphome. خودکار پتے کے لیے خالی چھوڑیں۔"
+            }
+          },
+          "access": {
+            "name": "رسائی",
+            "data": {
+              "access": "رسائی",
+              "users": "منتخب صارفین"
+            },
+            "data_description": {
+              "users": "منتظمین کو بھی منتخب کرنا ضروری ہے۔"
+            }
+          },
+          "authentication": {
+            "name": "خدمت کی توثیق",
+            "data": {
+              "auth_type": "توثیق",
+              "username": "صارف نام",
+              "password": "پاس ورڈ",
+              "bearer_token": "Bearer ٹوکن"
+            },
+            "data_description": {
+              "auth_type": "صارف نام کے بغیر Basic ایپ کا لاگ اِن استعمال کرتا ہے۔ Digest کو لاگ اِن معلومات درکار ہیں۔",
+              "password": "HA کی ترتیبات میں الگ خفیہ کاری کے بغیر محفوظ ہوتا ہے۔",
+              "bearer_token": "صرف خدمت کا ٹوکن؛ الگ خفیہ کاری کے بغیر محفوظ ہوتا ہے۔"
+            }
+          },
+          "advanced": {
+            "name": "اعلیٰ ترتیبات",
+            "data": {
+              "verify_ssl": "TLS سرٹیفکیٹ کی جانچ",
+              "rewrite": "ایپ کے URL دوبارہ لکھیں"
+            },
+            "data_description": {
+              "rewrite": "اگر ایپ پہلے ہی پراکسی پاتھ کی معاونت کرتی ہے تو بند کریں۔"
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "لاگ اِن معلومات، کوئری یا فریگمنٹ کے بغیر HTTP(S) استعمال کریں۔",
+      "name_required": "نام درج کریں۔",
+      "select_users": "کم از کم ایک فعال صارف منتخب کریں۔",
+      "username_required": "خدمت کا صارف نام درج کریں۔",
+      "invalid_username": "صارف نام میں کولن نہیں ہو سکتا۔",
+      "token_required": "خدمت کا ٹوکن درج کریں۔",
+      "invalid_auth_type": "معاونت یافتہ توثیق کی قسم منتخب کریں۔",
+      "invalid_credentials": "لاگ اِن معلومات میں نئی سطر کے حروف نہیں ہو سکتے۔",
+      "invalid_panel_path": "/ سے شروع کریں۔ چھوٹے لاطینی حروف، ہندسے، - یا _ استعمال کریں۔ Home Assistant کے راستے مخصوص ہیں۔",
+      "panel_path_in_use": "یہ راستہ پہلے سے استعمال میں ہے۔"
+    }
+  },
+  "selector": {
+    "access": {
+      "options": {
+        "admin": "صرف منتظمین",
+        "authenticated": "تمام لاگ اِن صارفین",
+        "users": "منتخب صارفین"
+      }
+    },
+    "auth_type": {
+      "options": {
+        "none": "ایپ میں لاگ اِن",
+        "basic": "Basic Auth",
+        "digest": "Digest Auth",
+        "bearer": "Bearer ٹوکن"
+      }
+    }
+  }
+}
