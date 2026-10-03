@@ -203,6 +203,10 @@ docker compose -f compose.dev.yaml up -d --force-recreate homeassistant
 
 Stop the environment with `docker compose -f compose.dev.yaml down`. Adding `--volumes` deletes its stored configuration and accounts.
 
+## License
+
+Better Proxy is licensed under the [MIT License](LICENSE).
+
 ---
 
 [Releases](https://github.com/wojciechkrol/ha_better_proxy/releases) · [Issues](https://github.com/wojciechkrol/ha_better_proxy/issues) · [MIT License](LICENSE)
